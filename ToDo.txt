@@ -1,0 +1,6 @@
+Load the comments from somewhere
+Add the responses?
+Do we want to speak the responses?
+Manage focus (keyboard won't work if focused on outer page)
+Option to move the response box
+Button to let adults change comments

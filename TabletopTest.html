@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Tabletop test</title>
+		<script src="tabletop.js"></script>
+		<script>
+  window.onload = function() { init() };
+
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_35lz7v1IfT5FzBWv_-Hw1cyMuicFPuJBZLFgZ0wCR4/pubhtmll';
+
+  function init() {
+    Tabletop.init( { key: public_spreadsheet_url,
+                     callback: showInfo,
+                     simpleSheet: false } )
+  }
+
+  function showInfo(data, tabletop) {
+    alert("Successfully processed!")
+    console.log(data);
+  }
+		</script>
+	</head>
+</html>

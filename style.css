@@ -1,0 +1,11 @@
+div#comments{
+	height: 38px;
+	padding-top: 5.6px;
+	padding-left: 12px;
+	opacity: 0.4;
+	display: none;
+	text-align: center;
+}
+body{
+	margin: 0;
+}
