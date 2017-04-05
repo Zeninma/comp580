@@ -29,10 +29,16 @@
 		<div id="comments">
 		</div>
 		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" width="75%" height="600">
-		<script type="text/javascript">
-			document.getElementById('my_iframe').onload = function() {
-				alert("New page has been loaded");
-			}
+		<script>
+			var indicator = document.querySelector('.loading-indicator');
+			var content_start_loading = function() {
+			indicator.style.display = 'block';
+			};
+			var content_finished_loading = function(iframe) {
+			alert("loading new page!");
+			// inject the start loading handler when content finished loading
+			iframe.contentWindow.onunload = content_start_loading;
+			};
 		</script>
 		</iframe>
 	</body>
