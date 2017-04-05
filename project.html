@@ -28,7 +28,7 @@
 		
 		<div id="comments">
 		</div>
-		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" width="75%" height="600">
+		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" onload="content_finished_loading(this)" width="75%" height="600">
 		<script>
 			var indicator = document.querySelector('.loading-indicator');
 			var content_start_loading = function() {
