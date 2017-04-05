@@ -21,14 +21,19 @@
 			<button id = "test_button" type="button" onclick="voice()">Click Me!</button>
 			 <script>
 				function voice(){
-					responsiveVoice.speak("Ha then this is pretty easy");
+					responsiveVoice.speak("Now I just need to give it corresponding word");
 				}
 			</script>
 		</div>
 		
 		<div id="comments">
 		</div>
-		<iframe src="http://test.tarheelreader.org/" width="75%" height="600">
+		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" width="75%" height="600">
+		<script type="text/javascript">
+			document.getElementById('my_iframe').onload = function() {
+				alert("New page has been loaded");
+			}
+		</script>
 		</iframe>
 	</body>
 </html>
