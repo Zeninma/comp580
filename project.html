@@ -28,12 +28,12 @@
 		
 		<div id="comments">
 		</div>
-		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" onload="content_finished_loading()" width="75%" height="1000">
+		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" onLoad="alert(this.contentWindow.location);" width="75%" height="1000">
 		</iframe>
-		<script>
-			var content_finished_loading = function() {
-			alert("loading new page!");
-			};
-		</script>
+		<!--<script>
+			var $iframe_content = $("#my_iframe").contents;
+			var url_string = document.getElementById("iframe_id").contentWindow.location.href;
+			alert(url_string)
+		</script>-->
 	</body>
 </html>
