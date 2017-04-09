@@ -30,14 +30,9 @@
 		
 		<div id="comments">
 		</div>
-		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" width="75%" height="1000">
+		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" onload="alert(this.contentWindow.location.href)" width="75%" height="1000">
 		</iframe>
 		<script>
-			$('#my_iframe').load(
-				function(){
-					alert('changed!');
-				}
-			);
 		</script>
 	</body>
 </html>
