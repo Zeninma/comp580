@@ -33,7 +33,8 @@
 		<iframe id = "my_iframe" src="http://test.tarheelreader.org/"  width="75%" height="1000">
 		</iframe>
 		<script>
-			$('#iFrame').contents();
+			var iframe_contents = $('#iFrame').contents();
+			iframe_contents.find('body').append("<p> This is a test <\p>");
 		</script>
 	</body>
 </html>
