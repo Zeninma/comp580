@@ -33,12 +33,11 @@
 		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" width="75%" height="1000">
 		</iframe>
 		<script>
-			var iframe = $('#my_iframe').contents();
-			iframe.addEventListener("DOMAttrModified", function(event) {
-				if (event.attrName == "src") {
-				alert('changed');
-			}
-			});
+			$('#my_iframe').load(
+				function(){
+					alert('changed!');
+				}
+			);
 		</script>
 	</body>
 </html>
