@@ -24,7 +24,7 @@ function addGrid(bookInfo){
     $('#click').click(
         function(){
             var readerDoc = $('#my_iframe').contents()[0];
-            var text = readerDoc.getElementsByClassName("thr-text").text();
+            var text = readerDoc.getElementsByClassName("thr-text")[0].text();
             responsiveVoice.speak(text);
         }
     );
