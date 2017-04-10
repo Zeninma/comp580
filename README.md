@@ -1,7 +1,6 @@
 # Develop Log
-* 4/10:
-	* to get the document object of the page inside the iframe, and to check whether or not the current page is a book use:
-'''javascript
-	var readerDoc = $('#iframe_id').contents()[0];
-	$($(readerDoc.getElementsByClassName("thr-book-page")));
-'''
+* Question for 4/10:
+	* How to design the table;
+	* How to retrieve the text contents
+	* Now to retrieve the right words after going to a book page;
+	* Need to check every time going to a new page: use setinterval
