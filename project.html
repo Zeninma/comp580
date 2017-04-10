@@ -36,8 +36,8 @@
 		<iframe id = "my_iframe" src="http://test.tarheelreader.org/"  height="1000">
 		</iframe>
 		<script>
-			var text = $("#my_iframe").context.innerHTML;
-			alert(text);
+			var text = $("#my_iframe").contents().find(".announcements");
+			alert(text.html());
 		</script>
 	</body>
 </html>
