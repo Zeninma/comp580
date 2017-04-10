@@ -4,6 +4,7 @@
 	<title>CAR Prototype</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "grid.css">
 	<!--<script src="tabletop.js"></script>-->
 	<!--<script src="code.js"></script>-->
 
@@ -22,10 +23,21 @@
 			<button id = "test_button" type="button" onclick="voice()">Click Me!</button>
 			 <script>
 				function voice(){
-					responsiveVoice.speak("Ha Ha Ha my girl friend does not know anything about how did I make this happen");
+					responsiveVoice.speak("This is merely a test");
 				}
 			</script>
 			<img src="/Courses/comp580-s17/users/zengao/CHAIR/PCS/00165 good.png" alt="test image" style="width:304px;height:228px;">
+		</div>
+		<div id = 'left_grid'>
+			<tr>
+				<th><img src="/Courses/comp580-s17/users/zengao/CHAIR/PCS/00165 good.png" alt="test image" style="width:304px;height:228px;"></th>
+				<th><img src="/Courses/comp580-s17/users/zengao/CHAIR/PCS/00165 good.png" alt="test image" style="width:304px;height:228px;"></th>
+				<th><img src="/Courses/comp580-s17/users/zengao/CHAIR/PCS/00165 good.png" alt="test image" style="width:304px;height:228px;"></th>
+				<th><img src="/Courses/comp580-s17/users/zengao/CHAIR/PCS/00165 good.png" alt="test image" style="width:304px;height:228px;"></th>
+			</tr>
+		</div>
+
+		<div id = 'right_grid'>
 		</div>
 		
 		<div id="comments">
@@ -33,11 +45,7 @@
 		<iframe id = "my_iframe" src="http://test.tarheelreader.org/" width="75%" height="1000">
 		</iframe>
 		<script>
-			$(function(){
-				$('#my_iframe').load(function() {
-					alert("the iframe has changed.");
-				});
-			});
+			$('#my_iframe button').add()
 		</script>
 	</body>
 </html>

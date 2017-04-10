@@ -1,0 +1,9 @@
+#left_grid{
+    float: left;
+    width: 20%;
+}
+
+#right_grid{
+    float: right;
+    width: 20%;
+}
