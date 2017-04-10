@@ -1,6 +1,6 @@
 $(document).ready(
     function(){
-        var announcements = $("#my_iframe").contents().find(".announcements");
-        alert(announcements.html());
+        var announcements = $("#my_iframe").contents();
+        alert(announcements);
     }
 );
