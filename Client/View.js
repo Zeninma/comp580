@@ -7,9 +7,9 @@ function isBook(current){
     var re=/^\/\d+\/\d+\/\d+\/([^\/]+)\/(?:(\d+)\/)?(?:\?.*)?$/,
 	m=current.match(re);
     if(!m || !m[2]){
-			addGrid(m);
-		}else{
 			hideGrid();
+		}else{
+			addGrid(m);
 		}
 }
 
