@@ -20,7 +20,7 @@
 			function(){
 				var path = $('#my_iframe').get(0).contentWindow.location.pathname;
 				alert(path);
-				var readerDoc = $('#my_iframe').contents();
+				var readerDoc = $('#my_iframe').contents()[0];
 				alert($(readerDoc.getElementsByClassName("announcements")).html());
 				}
 			);
