@@ -18,8 +18,8 @@
 		<script>
 			$("#click").click(
 			function(){
-				var iframe = $("#my_iframe").contents();
-				alert(jQuery.type(iframe.find(".announcements")));
+				var path = $('#my_iframe').get(0).contentWindow.location.pathname;
+				alert(path);
 				}
 			);
 		</script>
@@ -43,7 +43,7 @@
 		
 		<div id="comments">
 		</div>
-		<iframe id = "my_iframe" src="http://test.tarheelreader.org/"  height="1000">
+		<iframe id = "my_iframe" src="/"  height="1000">
 		</iframe>
 	</body>
 </html>
