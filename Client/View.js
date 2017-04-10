@@ -6,7 +6,11 @@ function isBook(current){
     // where m[1] = the title of the book, m[2] = the current page num
     var re=/^\/\d+\/\d+\/\d+\/([^\/]+)\/(?:(\d+)\/)?(?:\?.*)?$/,
 	m=current.match(re);
-    addGrid(m);
+    if(!m || !m[2]){
+			addGrid(m);
+		}else{
+			hideGrid();
+		}
 }
 
 function addGrid(bookInfo){
@@ -17,6 +21,10 @@ function addGrid(bookInfo){
 			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
 			+ '</tr>'
     );
+}
+
+function hideGrid(){
+     $('#left_grid').html('');
 }
 
 $(document).ready(
