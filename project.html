@@ -13,21 +13,6 @@
 	</head>
 	
 	<body>
-		<div id="controls">
-			<fieldset>
-				<label>Choose Comment Level</label>
-				<input type="radio" name="set" value="1" checked>First Read
-				<input type="radio" name="set" value="2">Reread
-				<input type="radio" name="set" value="3">Read Again
-			</fieldset>
-			<button id = "test_button" type="button" onclick="voice()">Click Me!</button>
-			 <script>
-				function voice(){
-					responsiveVoice.speak("This is merely a test");
-				}
-			</script>
-			<img src="/Courses/comp580-s17/users/zengao/CHAIR/PCS/00165 good.png" alt="test image" style="width:304px;height:228px;">
-		</div>
 		<div id = 'left_grid'>
 			<tr>
 				<th><img src="/Courses/comp580-s17/users/zengao/CHAIR/PCS/00165 good.png" alt="test image" style="width:304px;height:228px;"></th>
@@ -51,7 +36,7 @@
 		<iframe id = "my_iframe" src="http://test.tarheelreader.org/"  height="1000">
 		</iframe>
 		<script>
-			$('#my_iframe button').add()
+			alert($('#my_iframe').contents());
 		</script>
 	</body>
 </html>
