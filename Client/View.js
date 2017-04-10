@@ -21,6 +21,13 @@ function addGrid(bookInfo){
 			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
 			+ '</tr>'
     );
+    $('#click').click(
+        function(){
+            var readerDoc = $('#my_iframe').contents()[0];
+            var text = readerDoc.getElementsByClassName("thr-text").text();
+            responsiveVoice.speak(text);
+        }
+    );
 }
 
 function hideGrid(){
