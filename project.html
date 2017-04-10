@@ -19,7 +19,7 @@
 			$("#click").click(
 			function(){
 				var iframe = $("#my_iframe").contents();
-				alert(iframe.find(".announcements"));
+				alert(jQuery.type(iframe.find(".announcements")));
 				}
 			);
 		</script>
