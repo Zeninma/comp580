@@ -21,7 +21,7 @@
 				var path = $('#my_iframe').get(0).contentWindow.location.pathname;
 				alert(path);
 				var readerDoc = $('#my_iframe').contents();
-				alert(readerDoc.getElementsByClassName("announcements"));
+				alert($(readerDoc.getElementsByClassName("announcements")).html());
 				}
 			);
 		</script>
