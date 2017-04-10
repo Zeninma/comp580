@@ -10,7 +10,7 @@ function isBook(current){
 }
 
 function addGrid(bookInfo){
-    $('#left_grid').append(
+    $('#left_grid').html(
         '<tr><th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
 			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
 			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
