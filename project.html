@@ -20,7 +20,7 @@
 			function(){
 				var path = $('#my_iframe').get(0).contentWindow.location.pathname;
 				alert(path);
-				var content = $('#my_iframe').get(0).contents().find('.announcement').html();
+				var content = $('#my_iframe').get(0).contentWindow;
 				alert(content);
 				}
 			);
