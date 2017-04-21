@@ -1,6 +1,6 @@
 <?php
 class Book{
-    private $bookName;
+    private $bookId;
     // an array of page
     private $pages;
 
@@ -18,6 +18,7 @@ class Book{
        $result = $mysqli -> query(
             "insert into Book (bookName) values('".$mysqli->real_escape_string($bookName)."')"
         );
+        // NOTE that, $resut also contain id for the new book object
         if($result){
             return true;
         }
@@ -26,14 +27,10 @@ class Book{
         }
     }
 
-    public function __construct($bookName){
+    public function __construct($bookId){
         // to construct a book 
         $mysqli = Book::connect();
-        $result = $mysqli->query(
-            "select Book.id from Book where Book.bookname='".$mysqli->real_escape_string($bookName)."'"
-        );
-        $result_row = $result->fetch_array();
-        $id = $result_row['id'];
+        $id = intval($bookId);
         if($id == null){
             return false;
         }
@@ -45,6 +42,7 @@ class Book{
             $result_row = $result->fetch_array();
             $max_page_num = intval($result_row['id']);
             $this->pages = array();
+            // all pages should start with 1
             for($i = 1; $i <= $max_page_num; $i++){
                 // for each existing page, add the Page to the pages array
                 $new_page = new Page($id, $i);
