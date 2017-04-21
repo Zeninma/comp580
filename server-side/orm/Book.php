@@ -38,10 +38,21 @@ class Book{
             return false;
         }
         else{
+            //find the range of pages
+            $result = $mysqli->query(
+                "select max(Annotatin.pageNum) from Annotation where Annotation.bookId =".intval($id)
+            );
+            $result_row = $result->fetch_array();
+            $max_page_num = intval($result_row['id']);
+            $this->pages = array();
+            for($i = 1; $i <= $max_page_num; $i++){
+                // for each existing page, add the Page to the pages array
+                $new_page = new Page($id, $i);
+                $this->pages[] = $new_page->get_array();
+            }
             return true;
         }
         // use the id to construct the pages object
-        $this->pages = new Pages($id);
     }
 
     public function get_json(){
