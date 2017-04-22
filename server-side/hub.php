@@ -13,6 +13,7 @@ ini_set('display_errors', 1);
     }
     else{
         $path_components = NULL;
+        exit();
     }
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
