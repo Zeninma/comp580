@@ -60,6 +60,7 @@ class Book{
     }
 
     public function get_json(){
+        echo var_dump("name: ".$this->bookName." ,pages: ".$this->pages."<br>");
         $restul_array = array(
             "name" => $this->bookName,
             "pages" => $this->pages
