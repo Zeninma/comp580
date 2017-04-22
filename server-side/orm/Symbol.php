@@ -21,8 +21,8 @@ class Symbol{
         );
         if($result){
             $result_row = $result->fetch_array();
-            $this->url = $result_row["url"];
-            $this->words_to_say = $result_row["wordstosay"];
+            $this->url = $result_row['url'];
+            $this->words_to_say = $result_row['wordstosay'];
         }
         else{
             return false;
@@ -31,8 +31,8 @@ class Symbol{
 
     public function get_array(){
         $result_array = array(
-            "url" => $this->url,
-            "words_to_say" => $this->words_to_say
+            'url' => $this->url,
+            'words_to_say' => $this->words_to_say
         );
         return $result_array;
     }
