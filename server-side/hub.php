@@ -9,6 +9,7 @@ ini_set('display_errors', 1);
 
     if(isset($_SERVER['PATH_INFO'])){
         $path_components = explode('/', $_SERVER['PATH_INFO']);
+        echo var_dump($path_components)."<br>";
     }
     else{
         $path_components = NULL;
