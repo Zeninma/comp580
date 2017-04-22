@@ -45,6 +45,7 @@ class Book{
             $result = $mysqli->query(
                 "select max(Annotation.pagenum) from Annotation where Annotation.id =".intval($id)
             );
+            echo "Result is :".var_dump($result)."<br>";
             $result_row = $result->fetch_array();
             $max_page_num = intval($result_row['pagenum']);
             $this->pages = array();
