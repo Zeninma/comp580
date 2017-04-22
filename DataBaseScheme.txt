@@ -1,0 +1,14 @@
+Book:
+    id: INT, Primary Key, each book’s id defines a version of annotation
+    bookName: VARCHAR(40): book's name
+
+Annotation:
+    id: INT, Primary Key
+    bookId: INT, foreign key to the BookTable
+    pageNum: INT
+    symbolId: INT, foreign key to Symbol Table
+
+Symbol:
+    id: INT, Primary Key
+    url: VARCHAR(255), url for the picture
+    words to say: VARCHAR(40), words to say for the corresponding symbolId
