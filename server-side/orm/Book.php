@@ -40,13 +40,13 @@ class Book{
                 "select Book.annoId from Book where Book.id =".intval($id)
             );
             $result_row = $result->fetch_array();
-            $annoId = $result_row['annoId'];
+            $annoId = $result_row["annoId"];
             //find the range of pages
             $result = $mysqli->query(
                 "select max(Annotatin.pageNum) from Annotation where Annotation.bookId =".intval($id)
             );
             $result_row = $result->fetch_array();
-            $max_page_num = intval($result_row['pagenum']);
+            $max_page_num = intval($result_row["pagenum"]);
             $this->pages = array();
             // all pages should start with 1
             for($i = 1; $i <= $max_page_num; $i++){
@@ -61,8 +61,8 @@ class Book{
 
     public function get_json(){
         $restul_array = array(
-            'name' => $this->bookName,
-            'pages' => $this->pages
+            "name" => $this->bookName,
+            "pages" => $this->pages
         );
         return json_encode($result_array);
     }

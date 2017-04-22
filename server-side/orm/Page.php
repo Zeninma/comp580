@@ -22,7 +22,7 @@
         // construct the symbold array
         if($symbol_table){
             while($next_row = $message_table->fetch_array()){
-                $new_symbol = new Symbol($next_row['id']);
+                $new_symbol = new Symbol($next_row["id"]);
                 $this->symbold[] = $new_symbol->get_array();
             }
         }
@@ -33,7 +33,7 @@
 
     public function get_array(){
         $result_array = array(
-            'symbols' => $this->symbols
+            "symbols" => $this->symbols
         );
         return $result_array;
     }
