@@ -35,12 +35,18 @@ class Book{
             return false;
         }
         else{
+            // get the annoId for the book
+            $result = $mysqli->query(
+                "select Book.annoId from Book where Book.id =".intval($id)
+            );
+            $result_row = $result->fetch_array();
+            $annoId = $result_row['annoId'];
             //find the range of pages
             $result = $mysqli->query(
                 "select max(Annotatin.pageNum) from Annotation where Annotation.bookId =".intval($id)
             );
             $result_row = $result->fetch_array();
-            $max_page_num = intval($result_row['id']);
+            $max_page_num = intval($result_row['pagenum']);
             $this->pages = array();
             // all pages should start with 1
             for($i = 1; $i <= $max_page_num; $i++){
