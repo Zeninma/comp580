@@ -17,13 +17,13 @@ ini_set('display_errors', 1);
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $bookId = intval($_GET["bookId"]);
-        $book = new Book($bookId);
         if($bookId == NULL){
             header("HTTP/1.0 404 NOT FOUND");
             print("Id: ".$bookId." Not Found");
             exit();
         }
         else{
+            $book = new Book($bookId);
             header("Content-type: application/json");
             print($book->get_json());
             exit();
