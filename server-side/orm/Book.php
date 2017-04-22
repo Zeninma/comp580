@@ -46,6 +46,7 @@ class Book{
                 "select max(Annotation.pagenum) from Annotation where Annotation.id =".intval($annoId)
             );
             $result_row = $result->fetch_array();
+            echo var_dump($result_row)." is the result row"."<br>";
             $max_page_num = intval($result_row['pagenum']);
             $this->pages = array();
             // all pages should start with 1
