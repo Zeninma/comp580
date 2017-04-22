@@ -15,7 +15,7 @@ ini_set('display_errors', 1);
     }
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
-        $bookId = intval(trim($_GET));
+        $bookId = intval(trim($_GET[0]));
         echo var_dump($bookId);
         $book = new Book($bookId);
         if($bookId == NULL){
