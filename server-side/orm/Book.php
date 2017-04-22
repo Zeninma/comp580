@@ -43,7 +43,7 @@ class Book{
             $annoId = $result_row['annoId'];
             //find the range of pages
             $result = $mysqli->query(
-                "select max(Annotatin.pageNum) from Annotation where Annotation.bookId =".intval($id)
+                "select max(Annotation.pageNum) from Annotation where Annotation.bookId =".intval($id)
             );
             $result_row = $result->fetch_array();
             $max_page_num = intval($result_row['pagenum']);
