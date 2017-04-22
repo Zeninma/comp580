@@ -52,7 +52,7 @@ class Book{
             // all pages should start with 1
             for($i = 1; $i <= $max_page_num; $i++){
                 // for each existing page, add the Page to the pages array
-                $new_page = new Page($id, $i);
+                $new_page = new Page($annoId, $i);
                 $this->pages[] = $new_page->get_array();
             }
             return true;

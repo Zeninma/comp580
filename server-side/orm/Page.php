@@ -11,10 +11,10 @@
         );
     } 
 
-    public function __construct($bookId, $pageNum){
+    public function __construct($annoId, $pageNum){
         $mysqli = Page::connect();
         $symbol_table = $mysqli->query(
-            "select Annotation.symbolId from Annotation where ( Annotation.bookId = ".intval($bookId)
+            "select Annotation.symbolId from Annotation where ( Annotation.id = ".intval($annoId)
             ."AND Annotation.pageNum = ".intval($pageNum).")"
         );
 
