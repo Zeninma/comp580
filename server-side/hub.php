@@ -9,7 +9,6 @@ ini_set('display_errors', 1);
 
     if(isset($_SERVER['PATH_INFO'])){
         $path_components = explode('/', $_SERVER['PATH_INFO']);
-        echo var_dump($path_components)."<br>";
     }
     else{
         $path_components = NULL;
@@ -17,10 +16,7 @@ ini_set('display_errors', 1);
     }
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
-        $bookId = intval($_GET[0]);
-        echo var_dump($bookId)."<br>";
-        echo var_dump(empty($_GET))."<br>";
-        echo var_dump($_GET)."<br>";
+        $bookId = intval($_GET["bookId"]);
         $book = new Book($bookId);
         if($bookId == NULL){
             header("HTTP/1.0 404 NOT FOUND");
