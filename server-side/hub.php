@@ -15,8 +15,8 @@ ini_set('display_errors', 1);
     }
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
-        $bookId = intval(trim($_GET['bookId']));
-        echo var_dump($bookId)."<br>";
+        $bookId = intval(trim($_GET));
+        echo var_dump($bookId);
         $book = new Book($bookId);
         if($bookId == NULL){
             header("HTTP/1.0 404 NOT FOUND");
