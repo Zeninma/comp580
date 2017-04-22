@@ -47,7 +47,7 @@ class Book{
             );
             $result_row = $result->fetch_array();
             echo var_dump($result_row)." is the result row"."<br>";
-            $max_page_num = intval($result_row['pagenum']);
+            $max_page_num = intval($result_row['max(Annotation.pagenum)']);
             $this->pages = array();
             // all pages should start with 1
             for($i = 1; $i <= $max_page_num; $i++){
