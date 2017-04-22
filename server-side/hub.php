@@ -20,7 +20,7 @@ ini_set('display_errors', 1);
         $bookId = intval($_GET["bookId"]);
         echo var_dump($bookId)."<br>";
         echo var_dump(is_null($bookId))."<br>";
-        if($bookId == null){
+        if(is_null($bookId)){
             header("HTTP/1.0 404 NOT FOUND");
             print("Id: ".$bookId." Not Found");
             exit();
