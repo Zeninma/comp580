@@ -23,7 +23,7 @@
             while($next_row = $symbol_table->fetch_array()){
                 echo var_dump($next_row)."is the next symbol <br>";
                 $new_symbol = new Symbol(intval($next_row['symbolId']));
-                $this->symbold[] = $new_symbol->get_array();
+                $this->symbols[] = $new_symbol->get_array();
             }
         }
         else{
