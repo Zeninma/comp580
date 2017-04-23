@@ -30,8 +30,8 @@ class Book{
     public function __construct($bookId){
         // to construct a book 
         $mysqli = Book::connect();
-        $id = intval($bookId);
-        if($id == null){
+        $bookId = intval($bookId);
+        if($bookId == null){
             return false;
         }
         else{
