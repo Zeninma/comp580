@@ -43,6 +43,7 @@ class Book{
             $max_page_num = intval($result_row['max(Annotation.pagenum)']);
             $this->pages = array();
             // all pages should start with 1
+            echo "max page num is : ".var_dump($max_page_num)."<br>";
             for($i = 1; $i <= $max_page_num; $i++){
                 // for each existing page, add the Page to the pages array
                 $new_page = new Page($bookId, $i);
