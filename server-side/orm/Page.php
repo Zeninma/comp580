@@ -14,7 +14,7 @@
     public function __construct($bookId, $pageNum){
         $mysqli = Page::connect();
         $symbol_table = $mysqli->query(
-            "select Annotation.id from Annotation where ( Annotation.bookId = ".intval($bookId)
+            "select Annotation.symbolId from Annotation where ( Annotation.bookId = ".intval($bookId)
             ." AND Annotation.pageNum = ".intval($pageNum).")"
         );
         echo var_dump($symbol_table)." is the symbol table <br>";
@@ -22,7 +22,7 @@
         // construct the symbold array
         if($symbol_table){
             while($next_row = $symbol_table->fetch_array()){
-                $new_symbol = new Symbol($next_row['symbolId']);
+                $new_symbol = new Symbol(intval($next_row['symbolId']));
                 $this->symbold[] = $new_symbol->get_array();
             }
         }
