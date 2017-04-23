@@ -13,6 +13,7 @@
 
     public function __construct($bookId, $pageNum){
         $mysqli = Page::connect();
+        echo var_dump($pageNum.$bookId);
         $symbol_table = $mysqli->query(
             "select Annotation.id from Annotation where ( Annotation.bookId = ".intval($bookId)
             ."AND Annotation.pageNum = ".intval($pageNum).")"
