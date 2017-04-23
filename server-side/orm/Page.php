@@ -13,11 +13,12 @@
 
     public function __construct($bookId, $pageNum){
         $mysqli = Page::connect();
-        echo var_dump($pageNum.$bookId);
         $symbol_table = $mysqli->query(
             "select Annotation.id from Annotation where ( Annotation.bookId = ".intval($bookId)
             ."AND Annotation.pageNum = ".intval($pageNum).")"
         );
+        echo "select Annotation.id from Annotation where ( Annotation.bookId = ".intval($bookId)
+            ."AND Annotation.pageNum = ".intval($pageNum).")".' is the query<br>';
         echo var_dump($symbol_table)." is the symbol table <br>";
         $this->symbols = array();
         // construct the symbold array
