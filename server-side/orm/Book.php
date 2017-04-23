@@ -40,12 +40,10 @@ class Book{
                 "select max(Annotation.pagenum) from Annotation where Annotation.bookId =".intval($bookId)
             );
             $result_row = $result->fetch_array();
-            echo "the result row for max pagenum is".var_dump($result_row)."<br>";
             $max_page_num = intval($result_row['max(Annotation.pagenum)']);
             $this->pages = array();
             // all pages should start with 1
             for($i = 1; $i <= $max_page_num; $i++){
-                echo var_dump($i)."new <br>";
                 // for each existing page, add the Page to the pages array
                 $new_page = new Page($bookId, $i);
                 $this->pages[] = $new_page->get_array();

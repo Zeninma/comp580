@@ -17,7 +17,7 @@
             "select Annotation.id from Annotation where ( Annotation.bookId = ".intval($bookId)
             ."AND Annotation.pageNum = ".intval($pageNum).")"
         );
-
+        echo var_dump($symbol_table)." is the symbol table <br>";
         $this->symbols = array();
         // construct the symbold array
         if($symbol_table){
