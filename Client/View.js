@@ -31,7 +31,7 @@ function addNotation(book_title){
     $.ajax(url_base + "/hub.php",
         {type: "GET",
         dataType: "json",
-        data: {bookId = "1"},
+        data: {bookId : "1"},
         sucess: function(book_json, status, jqXHR){
             alert(book_json);
         }
