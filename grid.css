@@ -1,14 +1,9 @@
 .left_grid{
-    float: left;
-    width: 20%;
 }
 
 .right_grid{
-    float: right;
-    width: 20%;
 }
 
 .my_iframe{
     height: 1000;
-    width: 55%;
 }
