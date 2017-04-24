@@ -1,4 +1,15 @@
+// url_base is the a constant string,
+// containing the base path
+var url_base = "wwwp.cs.unc.edu/Courses/comp580-s17/users/zengao/CHAIR";
 var url = "";
+
+function change(current_path){
+    // function take the changed_current,
+    // determine the next phas:
+    // 1. Open notation in a book;
+    // 2. create new notation for the book;
+    isBook(current_path);
+}
 
 function isBook(current){
     // take the current path of the content inside iframe;
@@ -9,8 +20,22 @@ function isBook(current){
     if(!m || !m[2]){
 			hideGrid();
 		}else{
-			addGrid(m);
+			addNotation(m[1]);
 		}
+}
+
+function addNotation(book_title){
+    // take the book_title
+    // need to retrieve all the existing versions
+    // of annotations for the book
+    $.ajax(url_base + "/hub.php",
+        {type: "GET",
+        dataType: "json",
+        data: {bookId = "1"},
+        sucess: function(book_json, status, jqXHR){
+            alert(book_json);
+        }
+    })
 }
 
 function addGrid(bookInfo){
@@ -42,7 +67,7 @@ $(document).ready(
 		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
 		if(current != url){
 			console.log('change', current);
-            isBook(current);
+            change(current);
 			url=current;
 		}
 	}, 200)
