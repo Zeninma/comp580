@@ -59,4 +59,28 @@ class Book{
         );
         return json_encode($result_array);
     }
+
+    public static function getBookList($bookName){
+        // given a string, which contains the book name
+        // return an array of corresponding book ids.
+        $mysqli = Book::connect();
+        $result = $mysqli->query(
+            "select Book.id from Book where Book.bookName = '".
+            $mysqli->real_escape_string($bookName)."'"
+        );
+        $book_id_list = array();
+        if($result){
+           while($next_row = $result->fetch_array()){
+               $new_id = intval(next_row['id']);
+               $book_id_list[] = $new_id;
+           }
+        return $book_id_list;
+        }
+        else{
+            header("HTTP/1.0 404 NOT FOUND");
+            print("Book: ".$bookName." Not Found");
+            exit();
+ 
+        }
+    }
 }

@@ -2,6 +2,22 @@
 // containing the base path
 var url_base = "wwwp.cs.unc.edu/Courses/comp580-s17/users/zengao/CHAIR";
 var url = "";
+// current_book is a global variable
+// which holds the Book object of the
+// book annotation of the current page
+// NOTE: remeber to unset it after the
+// user quit the reading process.
+var current_book;
+// current_page_num is int, which holds
+// the current page number of the book
+// start from 1
+var current_page_num;
+// layout_mode is int, which holds
+// the current mode to display the annotations:
+// 0: the annotations are on the left and right sides;
+// 1: the annotations are all placed on the bottom;
+// default to be 0
+var layout_mode = 0;
 
 function change(current_path){
     // function take the changed_current,
@@ -24,16 +40,33 @@ function isBook(current){
 		}
 }
 
+function get_Notation_list(book_title){
+    // given the book name,
+    // query to the server to get a list
+    // of versions of Annotations
+      $.ajax(url_base + "/hub.php/bookList",
+        {type: "GET",
+        dataType: "json",
+        data: {bookName : book_title},
+        sucess: function(book_json, status, jqXHR){
+            // Should reconstruct the option list
+            // for versions of books.
+            return 0;
+        }
+    })
+}
+
+
 function addNotation(book_title){
     // take the book_title
     // need to retrieve all the existing versions
     // of annotations for the book
-    $.ajax(url_base + "/hub.php",
+    $.ajax(url_base + "/hub.php/book",
         {type: "GET",
         dataType: "json",
         data: {bookId : "1"},
         sucess: function(book_json, status, jqXHR){
-            alert(book_json);
+            current_book = new Book(book_json);
         }
     })
 }

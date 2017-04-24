@@ -16,19 +16,36 @@ ini_set('display_errors', 1);
     }
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
-        echo var_dump($_GET['bookId'])."<br>";
-        $bookId = intval($_GET['bookId']);
-        echo var_dump($bookId)."<br>";
-        echo var_dump(is_null($bookId))."<br>";
-        if(is_null($bookId)){
+       if((count($path_components)==2)&&($path_components[1]== "book")){
+            $bookId = intval($_GET['bookId']);
+            if(is_null($bookId)){
+                header("HTTP/1.0 404 NOT FOUND");
+                print("Book Not Found");
+                exit();
+            }
+            else{
+                $book = new Book($bookId);
+                header("Content-type: application/json");
+                print($book->get_json());
+                exit();
+            }
+       }
+    }
+    else if((count($path_components)==2)&&($path_components[1]== "bookName")){
+        $bookName = $_GET['bookName'];
+        if(is_null($bookName)){
             header("HTTP/1.0 404 NOT FOUND");
-            print("Id: ".$bookId." Not Found");
+            print("Book Name Not Found");
             exit();
         }
         else{
-            $book = new Book($bookId);
+            $bookList = Book::getBookList($bookName);
             header("Content-type: application/json");
-            print($book->get_json());
-            exit();
+            print(json_encode($bookList));
         }
     }
+    else{
+        // Need to fill with extra Post method
+        exit();
+    }
+     
