@@ -31,7 +31,7 @@ ini_set('display_errors', 1);
             }
        }
     }
-    else if((count($path_components)==2)&&($path_components[1]== "bookName")){
+    else if((count($path_components)==2)&&($path_components[1]== "bookList")){
         $bookName = $_GET['bookName'];
         if(is_null($bookName)){
             header("HTTP/1.0 404 NOT FOUND");

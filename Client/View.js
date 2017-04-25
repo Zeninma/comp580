@@ -48,9 +48,13 @@ function get_Notation_list(book_title){
         {type: "GET",
         dataType: "json",
         data: {bookName : book_title},
-        sucess: function(book_json, status, jqXHR){
+        sucess: function(book_list_json, status, jqXHR){
+            // book_list_json has two fields:
+            // 1.book_id_array
+            // 2.book_name_array
             // Should reconstruct the option list
             // for versions of books.
+            current_book.dropDownList(book_list_json);
             return 0;
         }
     })
