@@ -1,7 +1,3 @@
-body{
-    margin: 0.5em;
-}
-
 .picGrid{
     width: 15%;
     float: left;
@@ -22,4 +18,8 @@ body{
     height: 100%;
     float: left;
     margin-right: 0%;
+}
+
+.bodyPart{
+    top: 10%;
 }
