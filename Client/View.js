@@ -1,5 +1,6 @@
 // url_base is the a constant string,
 // containing the base path
+var full_url_base = "wwwp.cs.unc.edu/Courses/comp580-s17/users/zengao/CHAIR/server-side";
 var url_base = "/CHAIR/server-side";
 var url = "";
 // current_book is a global variable
@@ -68,6 +69,10 @@ function addNotation(book_title){
     $.ajax( url_base + '/hub.php/book',
         {
         type: "GET",
+        crossDomain: true,
+        xhrFields:{
+            withCredentials: true
+        },
         dataType: "json",
         data: { "bookId" : "1"},
         sucess: function(book_json, status, jqXHR){
