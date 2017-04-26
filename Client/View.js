@@ -45,7 +45,7 @@ function get_Notation_list(book_title){
     // given the book name,
     // query to the server to get a list
     // of versions of Annotations
-      $.ajax(url_base + "/hub.php/bookList",
+      $.ajax(full_url_base + "/hub.php/bookList",
         {type: "GET",
         dataType: "json",
         data: { "bookName" : book_title},
@@ -66,7 +66,7 @@ function addNotation(book_title){
     // take the book_title
     // need to retrieve all the existing versions
     // of annotations for the book
-    $.ajax( url_base + '/hub.php/book',
+    $.ajax( full_url_base + '/hub.php/book',
         {
         type: "GET",
         crossDomain: true,
