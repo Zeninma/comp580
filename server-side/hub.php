@@ -16,11 +16,11 @@ ini_set('display_errors', 1);
     }
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
-        if ((count($path_components)==4)&&($path_components[1] == "book")){
-            $bookId = intval($path_components[3]);
+        if ((count($path_components)==3)&&($path_components[1] == "book")){
+            $bookId = intval($path_components[2]);
            if(is_null($bookId)){
                 header("HTTP/1.0 404 NOT FOUND");
-                print("Book Not Found");
+                print("Missing Parameter bookId");
                 exit();
             }
             else{
@@ -30,6 +30,22 @@ ini_set('display_errors', 1);
                 exit();
             }
         }
+        else if ((count($path_components)==3)&&($path_components[1] == "bookList")){
+            $bookName = trim($path_components[2]);
+            if(is_null($bookName)){
+                header("HTTP/1.0 404 NOT FOUND");
+                print("Missing Parameter bookName");
+                exit();
+            }
+            else{
+                $bookList = Book::getBookList($bookName);
+                $bookListJson = json_encode($bookList);
+                header("Content-type: application/json");
+                print($bookListJson);
+                exit();
+            }
+        }
+        // The following may need to be deleted
        else if((count($path_components)==2)&&($path_components[1]== "book")){
            $bookId = intval($_GET['bookId']);
            if(is_null($bookId)){
