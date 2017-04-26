@@ -13,7 +13,8 @@ BookList.prototype.fill_notation = function(){
     var name_array = this.name_array;
     var dropDown = $("#NotationDropDown .dropdown-menu");
     // clear the previous elements in the nav
-    dropDown.html('');
+    var content = dropDown.html();
+    dropDown.html("");
     for(var i=0; i<this.len; i++){
         var tmp_li = $('<li></li>');
         // bind the book id with the li
