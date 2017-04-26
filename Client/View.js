@@ -116,7 +116,7 @@ function hideGrid(){
 
  $(document).on('click','.picGrid',
     function(e){
-        var clicked = e.target;
+        var clicked = $(e.target);
         var tmp = clicked.data();
         var text = clicked.data("text");
         responsiveVoice.speak(text);
