@@ -15,7 +15,7 @@ BookList.prototype.fill_notation = function(){
     for(var i=0; i<this.len; i++){
         var tmp_li = $('<li><a></a></li>');
         // bind the book id with the li
-        tmp_li.data("id", int(this.id_array[i]));
+        tmp_li.data("id", this.id_array[i]);
         tmp_li.html(this.name_array[i]);
         dropDown.append(tmp_li);
     }
