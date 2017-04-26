@@ -1,6 +1,6 @@
 // url_base is the a constant string,
 // containing the base path
-var url_base = "";
+var url_base = "wwwp.cs.unc.edu/Courses/comp580-s17/users/zengao/CHAIR";
 var url = "";
 // current_book is a global variable
 // which holds the Book object of the
@@ -65,8 +65,9 @@ function addNotation(book_title){
     // take the book_title
     // need to retrieve all the existing versions
     // of annotations for the book
-    $.ajax(url_base + "/hub.php/book",
-        {type: "GET",
+    $.ajax({
+        url: url_base + '/hub.php/book',
+        type: "GET",
         dataType: "json",
         data: {bookId : "1"},
         sucess: function(book_json, status, jqXHR){
