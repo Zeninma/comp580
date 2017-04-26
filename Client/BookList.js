@@ -19,6 +19,26 @@ BookList.prototype.fill_notation = function(){
         // bind the book id with the li
         tmp_li.data("id",id_array[i]);
         tmp_li.html('<a>'+name_array[i]+'</a>');
+        tmp_li.on( 'click',
+            function(e){
+            // retrieve the corresponding book object
+            // change the current book to the retrieved one
+            var book_id = tmp_li.data('id');
+             $.ajax(url_base+ '/hub.php/book/'+ book_id,
+                    {
+                    type: "GET",
+                    crossDomain: true,
+                    xhrFields:{
+                        withCredentials: true
+                    },
+                    dataType: "json",
+                    success: function(book_json, status, jqXHR){
+                        current_book = new Book(book_json);
+                        // current_book.addNotation();
+                    }
+                })
+            }
+        );
         dropDown.append(tmp_li);
     }
 }

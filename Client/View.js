@@ -3,12 +3,15 @@
 var full_url_base = "http://wwwp.cs.unc.edu/Courses/comp580-s17/users/zengao/CHAIR/server-side";
 var url_base = "/CHAIR/server-side";
 var url = "";
+// total number of max value of pics allowd on the side bars
+var grid_num_max = 8;
 // current_book is a global variable
 // which holds the Book object of the
 // book annotation of the current page
 // NOTE: remeber to unset it after the
 // user quit the reading process.
 var current_book;
+var current_bookList;
 var current_name;
 // current_page_num is int, which holds
 // the current page number of the book
@@ -35,15 +38,44 @@ function isBook(current){
     // where m[1] = the title of the book, m[2] = the current page num
     var re=/^\/\d+\/\d+\/\d+\/([^\/]+)\/(?:(\d+)\/)?(?:\?.*)?$/,
 	m=current.match(re);
-    if(!m || !m[2]){
+    if(!m){
+        // not in a book page
         return;
     }
-    else if(current_name != m[1]){
-        current_name = m[1];
-        get_Notation_list(m[1]);
+    else if(m&&!m[2]){
+        // at the first page
+        // initialize the dropdown list
+        // retrieve default book
+        var book_title = m[1];
+        get_Notation_list(book_title);
+        var default_book_id = current_bookList.id_array[0];
+        get_book(default_book_id);
+        current_page_num = 1;
+        loadNotation(current_page_num);
+    }
+    else if(m[2]){
+        // at later pages
+        current_page_num = m[2];
+        loadNotation(current_page_num);
     }
     else{
-        addNotation(m[1]);
+        return;
+    }
+}
+
+function loadNotation(page_num){
+    // find the Page object corresponding to the current
+    // page, and load all the symbols
+    var curr_page = current_book.pages[page_num-1];
+    var limit = Math.max(curr_page.symbols.length, grid_num_max)-1;
+    for(var i = 0; i < limit; i++){
+        var tmp_symbol = curr_page.symbols[i];
+        var pic = tmp_symbol.pic_url;
+        var text = tmp_symbol.words;
+        var curr_td = $('#grid'+i);
+        curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: 100%">');
+        curr_td.on('click',
+        responsiveVoice.speak(text));
     }
 }
 
@@ -60,18 +92,18 @@ function get_Notation_list(book_title){
             // 2.book_name_array
             // Should reconstruct the option list
             // for versions of books.
-            var new_bookList = new BookList(book_list_json);
-            new_bookList.fill_notation();
+            current_bookList = new BookList(book_list_json);
+            current_bookList.fill_notation();
         }
     })
 }
 
 
-function addNotation(book_title){
-    // take the book_title
+function get_book(book_id){
+    // take the book_id
     // need to retrieve all the existing versions
     // of annotations for the book
-    $.ajax(url_base+ '/hub.php/book/1',
+    $.ajax(url_base+ '/hub.php/book/'+book_id,
         {
         type: "GET",
         crossDomain: true,

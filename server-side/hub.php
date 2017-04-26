@@ -46,33 +46,6 @@ ini_set('display_errors', 1);
             }
         }
         // The following may need to be deleted
-       else if((count($path_components)==2)&&($path_components[1]== "book")){
-           $bookId = intval($_GET['bookId']);
-           if(is_null($bookId)){
-                header("HTTP/1.0 404 NOT FOUND");
-                print("Book Not Found");
-                exit();
-            }
-            else{
-                $book = new Book($bookId);
-                header("Content-type: application/json");
-                print($book->get_json());
-                exit();
-            }
-       }
-        else if((count($path_components)==2)&&($path_components[1]== "bookList")){
-            $bookName = $_GET['bookName'];
-            if(is_null($bookName)){
-                header("HTTP/1.0 404 NOT FOUND");
-                print("Book Name Not Found");
-                exit();
-            }
-            else{
-                $bookList = Book::getBookList($bookName);
-                header("Content-type: application/json");
-                print(json_encode($bookList));
-            }
-        }
         else{
             exit();
         }
