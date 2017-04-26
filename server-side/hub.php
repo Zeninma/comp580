@@ -16,7 +16,7 @@ ini_set('display_errors', 1);
     }
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
-        echo var_dump($pathcomponents)." is the path components <br>";
+        echo var_dump($path_components)." is the path components <br>";
         echo var_dump($_GET);
        if((count($path_components)==2)&&($path_components[1]== "book")){
            $bookId = intval($_GET['bookId']);
