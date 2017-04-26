@@ -65,8 +65,8 @@ function addNotation(book_title){
     // take the book_title
     // need to retrieve all the existing versions
     // of annotations for the book
-    $.ajax({
-        url: url_base + '/hub.php/book',
+    $.ajax( url_base + '/hub.php/book',
+        {
         type: "GET",
         dataType: "json",
         data: {bookId : "1"},
