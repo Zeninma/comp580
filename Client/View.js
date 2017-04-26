@@ -72,7 +72,7 @@ function loadNotation(page_num){
     }
 }
 
-function speak(text){
+function text_to_speech(text){
     responsiveVoice.speak(text)
 }
 
