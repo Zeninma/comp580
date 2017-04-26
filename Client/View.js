@@ -66,7 +66,8 @@ function loadNotation(page_num){
         var text = tmp_symbol.words;
         var curr_td = $('#grid'+i);
         curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: 100%">');
-        jQuery.data($('#grid'+i+' img'),"text",text);
+        var curr_img = $('#grid'+i+' img');
+        jQuery.data(curr_img ,"text",text);
     }
 }
 
