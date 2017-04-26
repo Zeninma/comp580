@@ -75,6 +75,8 @@ function loadNotation(page_num){
 }
 
 function text_to_speech(text){
+    // should also allow customers to change the type of voice
+    // volume ect.
     responsiveVoice.speak(text)
 }
 
@@ -102,7 +104,7 @@ function get_book(book_id){
     // take the book_id
     // need to retrieve all the existing versions
     // of annotations for the book
-    $.ajax(url_base+ '/hub.php/book/'+book_id,
+    $.ajax(url_base+ '/hub.php/book?bookId=1',
         {
         type: "GET",
         crossDomain: true,
