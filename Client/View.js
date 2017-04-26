@@ -24,6 +24,46 @@ var current_page_num;
 // default to be 0
 var layout_mode = 0;
 
+//start function
+function start(){
+    // set the window size of the i-frame
+    var wh = $(window).innerHeight();
+    var ih = wh - $("#topNavBar").height() - 1;
+    $(".bodyPart").css({
+        height: ih,
+    });
+    $("#iframePart").css({
+        heigth: ih,
+    })
+
+    // bind the pics with responsive voice
+    $(document).on('click','.picGrid',
+        function(e){
+            var clicked = $(e.target);
+            var tmp = clicked.data();
+            var text = clicked.data("text");
+            responsiveVoice.speak(text);
+    })
+
+    // set the interval to check the url of
+    // the current page
+    setInterval(function(){
+		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
+		if(current != url){
+			console.log('change', current);
+            isBook(current);
+			url=current;
+		}
+	}, 200)
+}
+
+
+$(document).ready(
+    start()
+);
+
+
+
 function isBook(current){
     // take the current path of the content inside iframe;
     // if current path is a book, m will be a list of string,
@@ -113,24 +153,3 @@ function get_book(book_id){
 function hideGrid(){
      $('#left_grid').html('');
 }
-
- $(document).on('click','.picGrid',
-    function(e){
-        var clicked = $(e.target);
-        var tmp = clicked.data();
-        var text = clicked.data("text");
-        responsiveVoice.speak(text);
-    })
-
-$(document).ready(
-    // The following function constantly check the current path
-    // If path is changed, call function isBook
-    setInterval(function(){
-		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
-		if(current != url){
-			console.log('change', current);
-            isBook(current);
-			url=current;
-		}
-	}, 200),
-);
