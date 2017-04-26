@@ -1,14 +1,13 @@
-.my_iframe{
-    width: 100%;
-    height: 100%;
+.picGrid{
+    width: 15%;
+    float: left;
 }
 
-.left_grid{
-    width: 100%;
-    height: 100%
+#left_grid{
+    margin-right: 0%;
 }
 
-.right_grid{
-    width: 100%;
-    height: 100%;
+#iframePart{
+    width: 69%;
+    float: left;
 }
