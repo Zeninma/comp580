@@ -34,7 +34,7 @@ function isBook(current){
     var re=/^\/\d+\/\d+\/\d+\/([^\/]+)\/(?:(\d+)\/)?(?:\?.*)?$/,
 	m=current.match(re);
     if(!m || !m[2]){
-			hideGrid();
+			return;
 		}else{
 			addNotation(m[1]);
 		}
