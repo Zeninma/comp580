@@ -2,7 +2,7 @@
 // containing the base path
 var full_url_base = "http://wwwp.cs.unc.edu/Courses/comp580-s17/users/zengao/CHAIR/server-side";
 var url_base = "/CHAIR/server-side";
-var url = "";
+var url;
 // total number of max value of pics allowd on the side bars
 var grid_num_max = 8;
 // current_book is a global variable
@@ -23,14 +23,6 @@ var current_page_num;
 // 1: the annotations are all placed on the bottom;
 // default to be 0
 var layout_mode = 0;
-
-function change(current_path){
-    // function take the changed_current,
-    // determine the next phas:
-    // 1. Open notation in a book;
-    // 2. create new notation for the book;
-    isBook(current_path);
-}
 
 function isBook(current){
     // take the current path of the content inside iframe;
@@ -67,7 +59,7 @@ function loadNotation(page_num){
     // find the Page object corresponding to the current
     // page, and load all the symbols
     var curr_page = current_book.pages[page_num-1];
-    var limit = Math.max(curr_page.symbols.length, grid_num_max)-1;
+    var limit = Math.min(curr_page.symbols.length, grid_num_max)-1;
     for(var i = 0; i < limit; i++){
         var tmp_symbol = curr_page.symbols[i];
         var pic = tmp_symbol.pic_url;
@@ -117,31 +109,6 @@ function get_book(book_id){
     })
 }
 
-function addGrid(bookInfo){
-    $('#right_grid').html(
-         '<tr><th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
-			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
-			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
-			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
-			+ '</tr>'
-    )
-    $('#left_grid').html(
-        '<tr><th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
-			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
-			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
-			+ '<th><img src="/CHAIR/PCS/00105all.png" alt="test image" style="width:304px;height:228px;"></th>'
-			+ '</tr>'
-    );
-    $('#click').click(
-        function(){
-            var readerDoc = $('#my_iframe').contents()[0];
-            var text = $(readerDoc.getElementsByClassName("thr-text").item(0));
-            var string_text = text.text();
-            responsiveVoice.speak(string_text);
-        }
-    );
-}
-
 function hideGrid(){
      $('#left_grid').html('');
 }
@@ -153,7 +120,7 @@ $(document).ready(
 		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
 		if(current != url){
 			console.log('change', current);
-            change(current);
+            isBook(current);
 			url=current;
 		}
 	}, 200)
