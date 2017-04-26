@@ -9,7 +9,7 @@ var BookList = function(bookList_json){
 BookList.prototype.fill_notation = function(){
     // fill the Notation dropdown on the navbar
     // with all the notation it gets
-    var dropDown = $("#Notation-dropdown <ul>");
+    var dropDown = $("#NotationDropDown li");
     // clear the previous elements in the nav
     dropDown.html('');
     for(var i=0; i<this.len; i++){
