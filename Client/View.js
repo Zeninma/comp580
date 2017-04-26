@@ -68,7 +68,8 @@ function loadNotation(page_num){
         curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: 100%">');
         curr_td.click(
             function(e){
-                alert('detected');
+                alert('clicked');
+                text_to_speech(text);
             });
     }
 }
