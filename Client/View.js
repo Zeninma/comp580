@@ -9,6 +9,7 @@ var url = "";
 // NOTE: remeber to unset it after the
 // user quit the reading process.
 var current_book;
+var current_name;
 // current_page_num is int, which holds
 // the current page number of the book
 // start from 1
@@ -35,10 +36,15 @@ function isBook(current){
     var re=/^\/\d+\/\d+\/\d+\/([^\/]+)\/(?:(\d+)\/)?(?:\?.*)?$/,
 	m=current.match(re);
     if(!m || !m[2]){
-			return;
-		}else{
-			addNotation(m[1]);
-		}
+        return;
+    }
+    else if(current_name != m[1]){
+        current_name = m[1];
+        get_Notation_list(m[1]);
+    }
+    else{
+        addNotation(m[1]);
+    }
 }
 
 function get_Notation_list(book_title){
@@ -54,8 +60,7 @@ function get_Notation_list(book_title){
             // 2.book_name_array
             // Should reconstruct the option list
             // for versions of books.
-            current_book.dropDownList(book_list_json);
-            return 0;
+            
         }
     })
 }
