@@ -68,8 +68,12 @@ function loadNotation(page_num){
         curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: 100%">');
         var curr_img = $('#grid'+i+' img');
         curr_img.on('click',
-        responsiveVoice.speak(text));
+        text_to_speech(text));
     }
+}
+
+function speak(text){
+    responsiveVoice.speak(text)
 }
 
 function get_Notation_list(book_title){
