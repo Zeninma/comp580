@@ -49,7 +49,7 @@ function get_Notation_list(book_title){
         {type: "GET",
         dataType: "json",
         data: { "bookName" : book_title},
-        sucess: function(book_list_json, status, jqXHR){
+        success: function(book_list_json, status, jqXHR){
             // book_list_json has two fields:
             // 1.book_id_array
             // 2.book_name_array
@@ -75,7 +75,7 @@ function addNotation(book_title){
         },
         dataType: "json",
         data: { "bookId" : "1"},
-        sucess: function(book_json, status, jqXHR){
+        success: function(book_json, status, jqXHR){
             current_book = new Book(book_json);
         }
     })
