@@ -1,6 +1,6 @@
 // url_base is the a constant string,
 // containing the base path
-var url_base = "/CHAIR";
+var url_base = "/CHAIR/server-side";
 var url = "";
 // current_book is a global variable
 // which holds the Book object of the
