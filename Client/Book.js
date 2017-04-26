@@ -12,9 +12,3 @@ var Book = function(book_json){
     }
 }
 
-Book.prototype.dropDownList(book_list_json) = function(){
-    // take the current path of the content inside iframe;
-    // if current path is a book, m will be a list of string,
-    // where m[1] = the title of the book, m[2] = the current page num
-    return true;
-}

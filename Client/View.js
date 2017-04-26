@@ -60,7 +60,8 @@ function get_Notation_list(book_title){
             // 2.book_name_array
             // Should reconstruct the option list
             // for versions of books.
-            
+            var new_bookList = new BookList(book_list_json);
+            new_bookList.fill_notation();
         }
     })
 }
