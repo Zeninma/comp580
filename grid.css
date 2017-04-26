@@ -21,5 +21,6 @@
 }
 
 .bodyPart{
-    top: 10%;
+    overflow: auto;
+    margin-top: 5%;
 }
