@@ -2,8 +2,8 @@ var Page = function(page_json){
 
     this.symbols = new Array();
 
-    for(var symbol in page_json.symbols){
-        tmp = new Symbol(symbol);
+    for(var i = 0; i < page_json.symbols.length; i++){
+        tmp = new Symbol(page_json.symbols[i]);
         this.symbols.push(tmp);
     }
 }

@@ -5,9 +5,9 @@ var Book = function(book_json){
     //field pages is an array that contains Page object.
     this.pages = new Array();
     
-    for (var page in book_json.pages){
+    for (var i = 0; i < book.pages.length; i++){
         // initialization of field pages
-        tmp = new Page(page);
+        tmp = new Page(book_json.pages[i]);
         this.pages.push(tmp);
     }
 }
