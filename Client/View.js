@@ -66,18 +66,8 @@ function loadNotation(page_num){
         var text = tmp_symbol.words;
         var curr_td = $('#grid'+i);
         curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: 100%">');
-        curr_td.click(
-            function(e){
-                alert('clicked');
-                text_to_speech(text);
-            });
+        curr_td.data("text",text);
     }
-}
-
-function text_to_speech(text){
-    // should also allow customers to change the type of voice
-    // volume ect.
-    responsiveVoice.speak(text)
 }
 
 function get_Notation_list(book_title){
@@ -104,7 +94,7 @@ function get_book(book_id){
     // take the book_id
     // need to retrieve all the existing versions
     // of annotations for the book
-    $.ajax(url_base+ '/hub.php/book?bookId=1',
+    $.ajax(url_base+ '/hub.php/book/'+book_id,
         {
         type: "GET",
         crossDomain: true,
@@ -122,6 +112,13 @@ function hideGrid(){
      $('#left_grid').html('');
 }
 
+ $(document).on('click','.picGrid',
+    function(e){
+        var clicked = e.target;
+        var text = clicked.data('text');
+        responsiveVoice.speak(text);
+    })
+
 $(document).ready(
     // The following function constantly check the current path
     // If path is changed, call function isBook
@@ -132,5 +129,5 @@ $(document).ready(
             isBook(current);
 			url=current;
 		}
-	}, 200)
+	}, 200),
 );

@@ -7,7 +7,6 @@ ini_set('display_errors', 1);
     require_once('orm/Page.php');
     require_once('orm/Symbol.php');
 
-    echo var_dump($_GET)." this is var_dump <br>";
     if(isset($_SERVER['PATH_INFO'])){
         $path_components = explode('/', $_SERVER['PATH_INFO']);
     }
