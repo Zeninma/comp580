@@ -75,9 +75,9 @@ function addNotation(book_title){
         },
         dataType: "json",
         data: { "bookId" : "1"},
-        complete: function(book_json, status, jqXHR){
-           current_book = new Book(book_json);
-        },
+        // complete: function(book_json, status, jqXHR){
+        //    current_book = new Book(book_json);
+        // },
         success: function(book_json, status, jqXHR){
             current_book = new Book(book_json);
         }
