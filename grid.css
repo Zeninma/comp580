@@ -1,3 +1,7 @@
+body{
+    margin: 0.5em;
+}
+
 .picGrid{
     width: 15%;
     float: left;
