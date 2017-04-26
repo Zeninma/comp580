@@ -67,7 +67,8 @@ function loadNotation(page_num){
         var curr_td = $('#grid'+i);
         curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: 100%">');
         var curr_img = $('#grid'+i+' img');
-        jQuery.data(curr_img ,"text",text);
+        curr_img.data("text",text);
+        var tmp = curr_img.data();
     }
 }
 
@@ -116,7 +117,8 @@ function hideGrid(){
  $(document).on('click','.picGrid',
     function(e){
         var clicked = e.target;
-        var text = jQuery.data(clicked, "text")
+        var tmp = clicked.data();
+        var text = clicked.data("text");
         responsiveVoice.speak(text);
     })
 
