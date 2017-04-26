@@ -1,6 +1,6 @@
 // url_base is the a constant string,
 // containing the base path
-var url_base = "wwwp.cs.unc.edu/Courses/comp580-s17/users/zengao/CHAIR";
+var url_base = "/CHAIR";
 var url = "";
 // current_book is a global variable
 // which holds the Book object of the
