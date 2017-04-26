@@ -87,8 +87,8 @@ class Book{
         $book_annoName_list = array();
         if($result){
            while($next_row = $result->fetch_array()){
-               $new_id = intval(next_row['id']);
-               $new_annoName = next_row['annoName'];
+               $new_id = intval($next_row['id']);
+               $new_annoName = $next_row['annoName'];
                $book_id_list[] = $new_id;
                $book_annoName_list[] = $new_annoName;
            }
