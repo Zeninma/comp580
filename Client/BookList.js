@@ -11,7 +11,7 @@ BookList.prototype.fill_notation = function(){
     // with all the notation it gets
     var id_array = this.id_array;
     var name_array = this.name_array;
-    var test_content = $("#NotationDropDown");
+    var test_content = $("#NotationDropDown").html();
     var dropDown = $("#NotationDropDown .dropdown-menu");
     // clear the previous elements in the nav
     var content = dropDown.html();
