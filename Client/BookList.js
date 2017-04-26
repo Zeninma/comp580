@@ -11,14 +11,14 @@ BookList.prototype.fill_notation = function(){
     // with all the notation it gets
     var id_array = this.id_array;
     var name_array = this.name_array;
-    var dropDown = $("#NotationDropDown ul");
+    var dropDown = $("#NotationDropDown .dropdown-menu");
     // clear the previous elements in the nav
     dropDown.html('');
     for(var i=0; i<this.len; i++){
-        var tmp_li = $('<li><a></a></li>');
+        var tmp_li = $('<li></li>');
         // bind the book id with the li
         tmp_li.data("id",id_array[i]);
-        tmp_li.html(name_array[i]);
+        tmp_li.html('<a>'+name_array[i]+'</a>');
         dropDown.append(tmp_li);
     }
 }
