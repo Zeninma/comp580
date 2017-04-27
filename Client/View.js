@@ -57,7 +57,7 @@ var ih = wh - $("#topNavBar").height() - 1;
 $(".bodyPart").css({
     height: ih,
 });
-$("#my_iframe").css({
+$("iframe").css({
     heigth: ih,
 })
 
