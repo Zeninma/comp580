@@ -32,7 +32,7 @@ function start(){
     $(".bodyPart").css({
         height: ih,
     });
-    $("#iframePart").css({
+    $("#my_iframe").css({
         heigth: ih,
     })
 
@@ -48,13 +48,13 @@ function start(){
     // set the interval to check the url of
     // the current page
     setInterval(function(){
-		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
+		var current = $('#my_iframe').get(0).contentWindow.location.pathname;
 		if(current != url){
 			console.log('change', current);
             isBook(current);
 			url=current;
 		}
-	}, 200)
+	}, 200);
 }
 
 
