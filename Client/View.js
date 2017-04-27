@@ -26,6 +26,12 @@ var layout_mode = 0;
 // variables hold the dimensions of the current window
 var ih, wh;
 
+// initialize the dimensions of the window
+wh = $(window).innerHeight();
+ih = wh - $('#topNavBar').height() - 1;
+$('iframe').css('height',ih);
+var debug = $('iframe');
+
 //start function
 function start(){
     // bind the pics with responsive voice
@@ -59,12 +65,6 @@ function start(){
 $(document).ready(
     start()
 );
-
-// initialize the dimensions of the window
-wh = $(window).innerHeight();
-ih = wh - $('#topNavBar').height() - 1;
-$('iframe').css('height',ih);
-var debug = $('iframe');
 
 
 function isBook(current){
