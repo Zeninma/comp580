@@ -43,6 +43,7 @@ function start(){
     wh = $(window).innerHeight();
     ih = wh - $("#topNavBar").height() - 1;
     $("#my_iframe").css("height",ih);
+    var debug = $("#my_iframe");
     setInterval(function(){
         //check to seer whether the height has changed
         var tmp_wh = $(window).innerHeight();
