@@ -39,11 +39,6 @@ function start(){
     // set the interval to check the url of
     // the current page
 
-    // initialize the dimensions of the window
-    wh = $(window).innerHeight();
-    ih = wh - $('#topNavBar').height() - 1;
-    $('iframe').css('height',ih);
-    var debug = $('iframe');
     setInterval(function(){
         //check to seer whether the height has changed
         var tmp_wh = $(window).innerHeight();
@@ -65,7 +60,11 @@ $(document).ready(
     start()
 );
 
-
+// initialize the dimensions of the window
+wh = $(window).innerHeight();
+ih = wh - $('#topNavBar').height() - 1;
+$('iframe').css('height',ih);
+var debug = $('iframe');
 
 
 function isBook(current){
