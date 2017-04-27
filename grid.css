@@ -7,3 +7,8 @@
     width: 69%;
     float: left;
 }
+
+#my_iframe{
+    width: 600px;
+    height: 900px;
+}
