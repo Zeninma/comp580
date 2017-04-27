@@ -23,50 +23,6 @@ var current_page_num;
 // 1: the annotations are all placed on the bottom;
 // default to be 0
 var layout_mode = 0;
-// variables hold the dimensions of the current window
-var ih, wh;
-
-// initialize the dimensions of the window
-wh = $(window).innerHeight();
-var debug2 = $('#topNavBar');
-ih = wh - $('#topNavBar').height() - 1;
-$('iframe').css('height',ih);
-var debug = $('iframe');
-
-//start function
-function start(){
-    // bind the pics with responsive voice
-    $(document).on('click','.picGrid',
-        function(e){
-            var clicked = $(e.target);
-            var tmp = clicked.data();
-            var text = clicked.data("text");
-            responsiveVoice.speak(text);
-    })
-    // set the interval to check the url of
-    // the current page
-
-    setInterval(function(){
-        //check to seer whether the height has changed
-        var tmp_wh = $(window).innerHeight();
-        var tmp_ih = wh - $("#topNavBar").height() - 1;
-        if(tmp_wh!=wh){
-            $('iframe').css('height',tmp_ih);
-        }
-		var current = $('iframe').get(0).contentWindow.location.pathname;
-		if(current != url){
-			console.log('change', current);
-            isBook(current);
-			url=current;
-		}
-	}, 200);
-}
-
-
-$(document).ready(
-    start()
-);
-
 
 function isBook(current){
     // take the current path of the content inside iframe;
@@ -157,3 +113,24 @@ function get_book(book_id){
 function hideGrid(){
      $('#left_grid').html('');
 }
+
+ $(document).on('click','.picGrid',
+    function(e){
+        var clicked = $(e.target);
+        var tmp = clicked.data();
+        var text = clicked.data("text");
+        responsiveVoice.speak(text);
+    })
+
+$(document).ready(
+    // The following function constantly check the current path
+    // If path is changed, call function isBook
+    setInterval(function(){
+		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
+		if(current != url){
+			console.log('change', current);
+            isBook(current);
+			url=current;
+		}
+	}, 200),
+);
