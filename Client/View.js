@@ -28,44 +28,38 @@ var ih, wh;
 
 // initialize the dimensions of the window
 wh = $(window).innerHeight();
-var debug2 = $('#topNavBar');
 ih = wh - $('#topNavBar').height() - 1;
 $('iframe').css('height',ih);
-var debug = $('iframe');
-
 //start function
-function start(){
-    // bind the pics with responsive voice
-    $(document).on('click','.picGrid',
-        function(e){
-            var clicked = $(e.target);
-            var tmp = clicked.data();
-            var text = clicked.data("text");
-            responsiveVoice.speak(text);
-    })
-    // set the interval to check the url of
-    // the current page
 
-    setInterval(function(){
-        //check to seer whether the height has changed
-        var tmp_wh = $(window).innerHeight();
-        var tmp_ih = wh - $("#topNavBar").height() - 1;
-        if(tmp_wh!=wh){
-            $('iframe').css('height',tmp_ih);
-        }
-		var current = $('iframe').get(0).contentWindow.location.pathname;
-		if(current != url){
-			console.log('change', current);
-            isBook(current);
-			url=current;
-		}
-	}, 200);
-}
+// bind the pics with responsive voice
+$(document).on('click','.picGrid',
+    function(e){
+        var clicked = $(e.target);
+        var tmp = clicked.data();
+        var text = clicked.data("text");
+        responsiveVoice.speak(text);
+})
+// set the interval to check the url of
+// the current page
+
+setInterval(function(){
+    //check to seer whether the height has changed
+    var tmp_wh = $(window).innerHeight();
+    var tmp_ih = wh - $("#topNavBar").height() - 1;
+    if(tmp_wh!=wh){
+        $('iframe').css('height',tmp_ih);
+    }
+    var current = $('iframe').get(0).contentWindow.location.pathname;
+    if(current != url){
+        console.log('change', current);
+        isBook(current);
+        url=current;
+    }
+}, 200);
 
 
-$(document).ready(
-    start()
-);
+
 
 
 function isBook(current){
