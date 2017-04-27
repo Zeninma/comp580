@@ -26,16 +26,6 @@ var layout_mode = 0;
 
 //start function
 function start(){
-    // set the window size of the i-frame
-    var wh = $(window).innerHeight();
-    var ih = wh - $("#topNavBar").height() - 1;
-    $(".bodyPart").css({
-        height: ih,
-    });
-    $("#my_iframe").css({
-        heigth: ih,
-    })
-
     // bind the pics with responsive voice
     $(document).on('click','.picGrid',
         function(e){
@@ -44,7 +34,6 @@ function start(){
             var text = clicked.data("text");
             responsiveVoice.speak(text);
     })
-
     // set the interval to check the url of
     // the current page
     setInterval(function(){
@@ -61,6 +50,17 @@ function start(){
 $(document).ready(
     start()
 );
+
+// set the window size of the i-frame
+var wh = $(window).innerHeight();
+var ih = wh - $("#topNavBar").height() - 1;
+$(".bodyPart").css({
+    height: ih,
+});
+$("#my_iframe").css({
+    heigth: ih,
+})
+
 
 
 
