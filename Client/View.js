@@ -23,6 +23,8 @@ var current_page_num;
 // 1: the annotations are all placed on the bottom;
 // default to be 0
 var layout_mode = 0;
+// variables hold the dimensions of the current window
+var ih;
 
 //start function
 function start(){
@@ -36,7 +38,16 @@ function start(){
     })
     // set the interval to check the url of
     // the current page
+
+    // initialize the dimensions of the window
+    wh = $(window).innerHeight();
+    ih = wh - $("#topNavBar").height() - 1;
     setInterval(function(){
+        //check to seer whether the height has changed
+        var tmp_wh = $(window).innerHeight();
+        var tmp_ih = wh - $("#topNavBar").height() - 1;
+        if(tmp_wh!=wh)
+        
 		var current = $('#my_iframe').get(0).contentWindow.location.pathname;
 		if(current != url){
 			console.log('change', current);
@@ -50,16 +61,6 @@ function start(){
 $(document).ready(
     start()
 );
-
-// set the window size of the i-frame
-var wh = $(window).innerHeight();
-var ih = wh - $("#topNavBar").height() - 1;
-$(".bodyPart").css({
-    height: ih,
-});
-$("iframe").css({
-    heigth: ih,
-})
 
 
 
