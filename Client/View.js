@@ -132,5 +132,5 @@ $(document).ready(
             isBook(current);
 			url=current;
 		}
-	}, 200),
+	}, 200)
 );
