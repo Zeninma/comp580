@@ -28,6 +28,7 @@ var ih, wh;
 
 // initialize the dimensions of the window
 wh = $(window).innerHeight();
+var debug2 = $('#topNavBar');
 ih = wh - $('#topNavBar').height() - 1;
 $('iframe').css('height',ih);
 var debug = $('iframe');
