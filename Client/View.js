@@ -41,17 +41,17 @@ function start(){
 
     // initialize the dimensions of the window
     wh = $(window).innerHeight();
-    ih = wh - $("#topNavBar").height() - 1;
-    $("iframe").css("height",ih);
-    var debug = $("iframe");
+    ih = wh - $('#topNavBar').height() - 1;
+    $('iframe').css('height',ih);
+    var debug = $('iframe');
     setInterval(function(){
         //check to seer whether the height has changed
         var tmp_wh = $(window).innerHeight();
         var tmp_ih = wh - $("#topNavBar").height() - 1;
         if(tmp_wh!=wh){
-            $("iframe").css("height",tmp_ih);
+            $('iframe').css('height',tmp_ih);
         }
-		var current = $('#my_iframe').get(0).contentWindow.location.pathname;
+		var current = $('iframe').get(0).contentWindow.location.pathname;
 		if(current != url){
 			console.log('change', current);
             isBook(current);
