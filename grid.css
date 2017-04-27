@@ -3,15 +3,7 @@
     float: left;
 }
 
-#left_grid{
-    margin-right: 0%;
-}
-
 #iframePart{
     width: 69%;
     float: left;
-}
-.bodyPart{
-    overflow: auto;
-    margin-top: 3%;
 }
