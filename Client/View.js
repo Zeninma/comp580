@@ -24,7 +24,7 @@ var current_page_num;
 // default to be 0
 var layout_mode = 0;
 // variables hold the dimensions of the current window
-var ih;
+var ih, wh;
 
 //start function
 function start(){
