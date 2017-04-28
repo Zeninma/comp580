@@ -126,6 +126,7 @@ $(document).ready(
     // The following function constantly check the current path
     // If path is changed, call function isBook
     setInterval(function(){
+        // set the interval to check the current path
 		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
 		if(current != url){
 			console.log('change', current);
