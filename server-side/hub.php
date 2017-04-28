@@ -7,6 +7,7 @@ ini_set('display_errors', 1);
     require_once('orm/Page.php');
     require_once('orm/Symbol.php');
 
+    echo var_dump($_GET)."<br>";
     if(isset($_SERVER['PATH_INFO'])){
         $path_components = explode('/', $_SERVER['PATH_INFO']);
     }
@@ -14,6 +15,7 @@ ini_set('display_errors', 1);
         $path_components = NULL;
         exit();
     }
+
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         if ((count($path_components)==3)&&($path_components[1] == "book")){
