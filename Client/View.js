@@ -69,6 +69,7 @@ function start(){
     });
 }
 
+
 function isBook(current){
     // take the current path of the content inside iframe;
     // if current path is a book, m will be a list of string,
@@ -133,6 +134,7 @@ function get_Notation_list(book_title){
             // Should reconstruct the option list
             // for versions of books.
             current_bookList = new BookList(book_list_json);
+            // call the BookList.fll_notation
             current_bookList.fill_notation();
         }
     })

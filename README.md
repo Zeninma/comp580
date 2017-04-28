@@ -13,3 +13,7 @@
 | ID | page num | symbol ID |
 ***
 | ID | picture URL | words to say |
+*** Need to Do:
+* Need to work on the start() function:
+    * When click on the layout mode, it will change the layout of the page
+    * When click on the Notation, it will retreive that version, and change the current page's of notation.
