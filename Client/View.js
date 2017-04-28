@@ -35,15 +35,38 @@ function start(){
 			url=current;
 		}
         // adjust the iframe's size dynamically
-        var winWidth = $(window).innerWidth();
-        var winHeight = $(window).innerHeight();
-        var navBarHeight = $("#topNavBar").height();
-        var iframeWidth = Math.floor(winWidth * 0.69);
-        var iframeHeight = winHeight - navBarHeight - 1;
-        $(".bodyPart").css("margin-top",navBarHeight+1);
-        $("iframe").css("height",iframeHeight);
-	}, 200)
+        if(layout_mode == 0){
+            // layout_mode == 0 indicates the horizontal layout
+            var winWidth = $(window).innerWidth();
+            var winHeight = $(window).innerHeight();
+            var navBarHeight = $("#topNavBar").height();
+            var iframeWidth = Math.floor(winWidth * 0.69);
+            var iframeHeight = winHeight - navBarHeight - 1;
+            $(".bodyPart").css("margin-top",navBarHeight+1);
+            $("iframe").css("height",iframeHeight);
+        }
+        else{
+            // question how to set up the table so it can become horizontal?
+            return;
+        }
+	}, 200);
 
+    // bound the click event with voice
+     $(document).on('click','.picGrid',
+    function(e){
+        var clicked = $(e.target);
+        var tmp = clicked.data();
+        var text = clicked.data("text");
+        responsiveVoice.speak(text);
+    });
+
+    // bound the View click event with layout change
+    $("#horizontal").on('click',function(){
+        layout_mode = 0;
+    });
+    $("#vertical").on('click', function(){
+        layout_mode = 1;
+    });
 }
 
 function isBook(current){
@@ -135,14 +158,6 @@ function get_book(book_id){
 function hideGrid(){
      $('#left_grid').html('');
 }
-
- $(document).on('click','.picGrid',
-    function(e){
-        var clicked = $(e.target);
-        var tmp = clicked.data();
-        var text = clicked.data("text");
-        responsiveVoice.speak(text);
-    })
 
 $(document).ready(
     // The following function constantly check the current path
