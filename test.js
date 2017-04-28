@@ -1,6 +1,7 @@
 var url_base = "/CHAIR/server-side";
-$('button').on('click',
+$(function(){$('button').on('click',
    function(e){
+       console.log('change', "we cjamged tje ");
         $.ajax(url_base + "/hub.php/book",
         {
         type: "GET",
@@ -20,4 +21,5 @@ $('button').on('click',
         }
     })
    }
+)}
 )
