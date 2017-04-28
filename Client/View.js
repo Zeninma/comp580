@@ -38,9 +38,10 @@ function start(){
         var winWidth = $(window).innerWidth();
         var winHeight = $(window).innerHeight();
         var navBarHeight = $("#topNavBar").height();
-        var iframeWidth = Math.floor(WinWidth * 0.69);
+        var iframeWidth = Math.floor(winWidth * 0.69);
         var iframeHeight = winHeight - navBarHeight - 1;
         $(".bodyPart").css("margin-top",navBarHeight+1);
+        $("iframe").css("height",iframeHeight);
 	}, 200)
 
 }
