@@ -55,7 +55,6 @@ function start(){
      $(document).on('click','.picGrid',
     function(e){
         var clicked = $(e.target);
-        var tmp = clicked.data();
         var text = clicked.data("text");
         responsiveVoice.speak(text);
     });
@@ -67,6 +66,23 @@ function start(){
     $("#vertical").on('click', function(){
         layout_mode = 1;
     });
+
+    // bind the Notation click with change of the Annotation
+    $(document).on('click', '#NotationDropDown',
+    function(e){
+        var clicked = e.target();
+        var selected_id = clicked.data('id');
+        $.ajax(url_base + 'hub.php/book/' + selected_id,
+            {type: "GET",
+            dataType: "json",
+            success: function(book_json, status, jqXHR){
+                // load the given book
+                current_book = new BookList(book_json);
+                // also need to update the current page
+                loadNotation(current_page_num);
+            }
+            })
+    })
 }
 
 
@@ -78,16 +94,24 @@ function isBook(current){
 	m=current.match(re);
     if(!m){
         // not in a book page
+        // Hence might be out of the book
+        // clear the current_name and current_book
+        current_name = '';
+        current_book = null;
+        current_bookList = null;
+        current_page_num = null;
         return;
     }
     else if(m&&!m[2]){
         // at the first page
-        // initialize the dropdown list
-        // retrieve default book
         if (m[1] == current_name){
+            // entered before, no need to reload the book
+            current_page_num  = 1;
             loadNotation(1);
         }
        else{
+           // first time into the book, need to initialize
+           // the book and load the book list 
             current_name = m[1];
             get_Notation_list(current_name);
             var default_book_id = current_bookList.id_array[0];
