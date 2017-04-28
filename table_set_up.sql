@@ -11,22 +11,23 @@ INSERT INTO  Book VALUES (0, 'snail-features', 'Ao2');
 
 INSERT INTO  Annotation VALUES (0, 1, 1, 1);
 INSERT INTO  Annotation VALUES (0, 1, 1, 1);
-INSERT INTO  Annotation VALUES (0, 1, 1, 2);
-INSERT INTO  Annotation VALUES (0, 1, 1, 2);
+INSERT INTO  Annotation VALUES (0, 1, 1, 1);
+INSERT INTO  Annotation VALUES (0, 1, 1, 1);
 
-INSERT INTO  Annotation VALUES (0, 1, 2, 2);
-INSERT INTO  Annotation VALUES (0, 1, 2, 2);
-INSERT INTO  Annotation VALUES (0, 1, 2, 2);
-INSERT INTO  Annotation VALUES (0, 1, 2, 2);
+INSERT INTO  Annotation VALUES (0, 1, 2, 1);
+INSERT INTO  Annotation VALUES (0, 1, 2, 1);
+INSERT INTO  Annotation VALUES (0, 1, 2, 1);
+INSERT INTO  Annotation VALUES (0, 1, 2, 1);
 
-INSERT INTO  Annotation VALUES (0, 2, 1, 1);
-INSERT INTO  Annotation VALUES (0, 2, 1, 1);
 INSERT INTO  Annotation VALUES (0, 2, 1, 2);
-INSERT INTO  Annotation VALUES (0, 2, 1, 1);
+INSERT INTO  Annotation VALUES (0, 2, 1, 2);
+INSERT INTO  Annotation VALUES (0, 2, 1, 2);
+INSERT INTO  Annotation VALUES (0, 2, 1, 2);
 
-INSERT INTO  Annotation VALUES (0, 2, 2, 1);
 INSERT INTO  Annotation VALUES (0, 2, 2, 2);
 INSERT INTO  Annotation VALUES (0, 2, 2, 2);
-INSERT INTO  Annotation VALUES (0, 2, 2, 1);
+INSERT INTO  Annotation VALUES (0, 2, 2, 2);
+INSERT INTO  Annotation VALUES (0, 2, 2, 2);
+
 INSERT INTO  Symbol VALUES (0, '/CHAIR/PCS/00105all.png', 'all');
 INSERT INTO  Symbol VALUES (0, '/CHAIR/PCS/00135different.png', 'different');
