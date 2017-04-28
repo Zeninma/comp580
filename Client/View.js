@@ -84,12 +84,17 @@ function isBook(current){
         // at the first page
         // initialize the dropdown list
         // retrieve default book
-        var book_title = m[1];
-        get_Notation_list(book_title);
-        var default_book_id = current_bookList.id_array[0];
-        get_book(default_book_id);
-        current_page_num = 1;
-        loadNotation(current_page_num);
+        if (m[1] == current_name){
+            loadNotation(1);
+        }
+       else{
+            current_name = m[1];
+            get_Notation_list(current_name);
+            var default_book_id = current_bookList.id_array[0];
+            get_book(default_book_id);
+            current_page_num = 1;
+            loadNotation(current_page_num);
+       }
     }
     else if(m[2]){
         // at later pages
