@@ -70,7 +70,7 @@ function start(){
     // bind the Notation click with change of the Annotation
     $(document).on('click', '#NotationDropDown',
     function(e){
-        var clicked = e.target();
+        var clicked = $(e.target);
         var selected_id = clicked.data('id');
         $.ajax(url_base + 'hub.php/book/' + selected_id,
             {type: "GET",
