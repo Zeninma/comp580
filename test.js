@@ -1,6 +1,7 @@
 var url_base = "/CHAIR/server-side";
-$('button').click('on',
-    $.ajax(url_base + "/hub.php/book",
+$('button').onclick('on',
+   function(e){
+        $.ajax(url_base + "/hub.php/book",
         {
         type: "GET",
         crossDomain: true,
@@ -18,4 +19,5 @@ $('button').click('on',
             alert(book);
         }
     })
+   }
 )
