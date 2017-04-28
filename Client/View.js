@@ -104,6 +104,8 @@ function loadNotation(page_num){
     // find the Page object corresponding to the current
     // page, and load all the symbols
     var curr_page = current_book.pages[page_num-1];
+    // number of symbols that are defined and can be added to the
+    // page
     var limit = Math.min(curr_page.symbols.length, grid_num_max)-1;
     for(var i = 0; i < limit; i++){
         var tmp_symbol = curr_page.symbols[i];
