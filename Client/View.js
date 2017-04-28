@@ -104,7 +104,7 @@ function isBook(current){
     }
     else if(m&&!m[2]){
         // at the first page
-        if (!(current_name=== null )&&m[1] == current_name){
+        if (!(current_name=== null )&& (m[1] == current_name)){
             // entered before, no need to reload the book
             current_page_num  = 1;
             loadNotation(1);
