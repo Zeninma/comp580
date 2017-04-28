@@ -1,3 +1,4 @@
+var url_base = "/CHAIR/server-side";
 $('button').click('on',
     $.ajax(url_base + "/hub.php/book",
         {
