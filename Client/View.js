@@ -24,6 +24,27 @@ var current_page_num;
 // default to be 0
 var layout_mode = 0;
 
+function start(){
+    // start the whole process
+    setInterval(function(){
+        // set the interval to check the current path
+		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
+		if(current != url){
+			console.log('change', current);
+            isBook(current);
+			url=current;
+		}
+        // adjust the iframe's size dynamically
+        var winWidth = $(window).innerWidth();
+        var winHeight = $(window).innerHeight();
+        var navBarHeight = $("#topNavBar").height();
+        var iframeWidth = Math.floor(WinWidth * 0.69);
+        var iframeHeight = winHeight - navBarHeight - 1;
+        $(".bodyPart").css("margin-top",navBarHeight+1);
+	}, 200)
+
+}
+
 function isBook(current){
     // take the current path of the content inside iframe;
     // if current path is a book, m will be a list of string,
@@ -125,13 +146,5 @@ function hideGrid(){
 $(document).ready(
     // The following function constantly check the current path
     // If path is changed, call function isBook
-    setInterval(function(){
-        // set the interval to check the current path
-		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
-		if(current != url){
-			console.log('change', current);
-            isBook(current);
-			url=current;
-		}
-	}, 200)
+    start()
 );
