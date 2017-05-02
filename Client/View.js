@@ -56,19 +56,22 @@ function start(){
     });
 
     // bound the View click event with layout change
-    $("#horizontal").on('click',function(){
-        // pics on two sides
-        layout_mode = 0;
-        $(".bottom_grid td").html('');
-        loadNotation(current_page_num);
-    });
-    $("#vertical").on('click', function(){
-        layout_mode = 1;
-        $(".left_grid td").html('');
-        $(".right_grid td").html('');
-        loadNotation(current_page_num);
-        // pics at bottom
-    });
+    $(document).on('click','.versionDropDown',function(e){
+        var clicked = $(e.target);
+    })
+    // $("#horizontal").on('click',function(){
+    //     // pics on two sides
+    //     layout_mode = 0;
+    //     $(".bottom_grid td").html('');
+    //     loadNotation(current_page_num);
+    // });
+    // $("#vertical").on('click', function(){
+    //     layout_mode = 1;
+    //     $(".left_grid td").html('');
+    //     $(".right_grid td").html('');
+    //     loadNotation(current_page_num);
+    //     // pics at bottom
+    // });
 
     // bind the Notation click with change of the Annotation
     $(document).on('click', '#NotationDropDown',
