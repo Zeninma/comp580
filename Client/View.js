@@ -93,7 +93,7 @@ function noBookLayout(){
     var winHeight = $(window).innerHeight();
     var navBarHeight = $("#topNavBar").height();
     $(".bodyPart").css({"margin-top":navBarHeight+1});
-    $('iframe').css({"width":winWidth, "height": winHeight - navBarHeight -1});
+    $('iframe').css({"width":winWidth, "height": winHeight - navBarHeight -1,"margin-left":0, "margin-right":0});
     $(".horizontal_grid").css({"height":0, "width": 0});
     $(".vertical_grid").css({"height":0, "width": 0});
 }
