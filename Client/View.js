@@ -60,10 +60,12 @@ function start(){
         // pics on two sides
         $(".bottom_grid td").html('');
         layout_mode = 0;
+        loadNotation(current_page_num);
     });
     $("#vertical").on('click', function(){
         $(".left_grid td").html('');
         $(".right_grid td").html('');
+        loadNotation(current_page_num);
         // pics at bottom
         layout_mode = 1;
     });
@@ -112,8 +114,8 @@ function bookLayout(){
             iframeWidth = Math.floor(winWidth * 0.55);
             iframeHeight = winHeight - navBarHeight - 1;
             $(".bodyPart").css({"margin-top":navBarHeight+1});
-            $(".horizontal_grid").css({"height":pic_size*4, "width": pic_size-2});
-            $(".horizontal_grid td").css({"margin-left":0, "width": pic_size-2, "height":pic_size-2});
+            $(".horizontal_grid").css({"height":pic_size*4, "width": pic_size});
+            $(".horizontal_grid td").css({"margin-left":0, "width": pic_size, "height":pic_size});
             $("iframe").css({"height":iframeHeight,"width":iframeWidth, "margin-left": pic_size+1, "margin-right": pic_size+1});
         }
         else{
@@ -179,7 +181,7 @@ function loadNotation(page_num){
     // page
     var limit = Math.min(curr_page.symbols.length, grid_num_max)-1;
     $('.picGrid td').html('');
-    for(var i = 0; i < limit; i++){
+    for(var i = 0; i <= limit; i++){
         var tmp_symbol = curr_page.symbols[i];
         var pic = tmp_symbol.pic_url;
         var text = tmp_symbol.words;

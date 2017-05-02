@@ -13,6 +13,11 @@ INSERT INTO  Annotation VALUES (0, 1, 1, 1);
 INSERT INTO  Annotation VALUES (0, 1, 1, 1);
 INSERT INTO  Annotation VALUES (0, 1, 1, 1);
 INSERT INTO  Annotation VALUES (0, 1, 1, 1);
+INSERT INTO  Annotation VALUES (0, 1, 1, 1);
+INSERT INTO  Annotation VALUES (0, 1, 1, 1);
+INSERT INTO  Annotation VALUES (0, 1, 1, 1);
+INSERT INTO  Annotation VALUES (0, 1, 1, 1);
+
 
 INSERT INTO  Annotation VALUES (0, 1, 2, 1);
 INSERT INTO  Annotation VALUES (0, 1, 2, 1);
