@@ -74,6 +74,7 @@ function start(){
         var selected_id = clicked.data('id');
         $.ajax(url_base + '/hub.php/book',
             {type: "GET",
+            async: false,
             dataType: "json",
             data: {"bookId":selected_id},
             success: function(book_json, status, jqXHR){
