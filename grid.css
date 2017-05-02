@@ -10,3 +10,7 @@
 .horizontal{
     vertical-align:top;
 }
+
+.bottom_grid table{
+    margin:auto;
+}
