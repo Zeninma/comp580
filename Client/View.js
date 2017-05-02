@@ -153,8 +153,8 @@ function get_Notation_list(book_name){
     // of versions of Annotations
       $.ajax(url_base + "/hub.php/bookList",
         {type: "GET",
-        dataType: "json",
         async: false,
+        dataType: "json",
         data: {"bookName": book_name},
         success: function(book_list_json, status, jqXHR){
             // book_list_json has two fields:
@@ -180,6 +180,7 @@ function get_book(book_id){
     $.ajax(url_base+ '/hub.php/book',
         {
         type: "GET",
+        async: false,
         crossDomain: true,
         xhrFields:{
             withCredentials: true
