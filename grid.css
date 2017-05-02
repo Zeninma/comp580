@@ -2,10 +2,7 @@
     float: left;
 }
 
-#iframePart{
-    float: left;
-}
-
 #my_iframe{
+    float: left;
     width: 100%;
 }
