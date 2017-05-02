@@ -98,7 +98,7 @@ function isBook(current){
         // not in a book page
         // Hence might be out of the book
         // clear the current_name and current_book
-        $('.picGrud td').html('');
+        $('.picGrid td').html('');
         current_name = '';
         current_book = null;
         current_bookList = null;
