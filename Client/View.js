@@ -113,7 +113,7 @@ function bookLayout(){
             iframeHeight = winHeight - navBarHeight - 1;
             $(".bodyPart").css({"margin-top":navBarHeight+1});
             $(".horizontal_grid").css({"height":pic_size*4, "width": pic_size});
-            $(".horizontal_grid td").css({"margin-left":0, "width": pic_size-1, "height":pic_size-1});
+            $(".horizontal_grid td").css({"margin-left":0, "width": pic_size-2, "height":pic_size-2});
             $("iframe").css({"height":iframeHeight,"width":iframeWidth, "margin-left": pic_size+1, "margin-right": pic_size+1});
         }
         else{
@@ -187,7 +187,7 @@ function loadNotation(page_num){
         var curr_img = $("<img>");
         curr_img.attr({"src":pic,"alt":text});
         curr_img.data("text",text);
-        curr_img.css({"width":pic_size, "height":pic_size});
+        curr_img.css({"width":pic_size-2, "height":pic_size-2});
         if (layout_mode == 0){
             curr_td = $('.horizontal_grid #grid'+i);
             
