@@ -59,7 +59,8 @@ function start(){
     $(document).on('click','#versionDropDown',function(e){
         var clicked = $(e.target);
         if(clicked.attr("id") == "horizontal"){
-             layout_mode = 0;
+            layout_mode = 0;
+            bookLayout()
             $(".bottom_grid td").html('');
             loadNotation(current_page_num);
         }
@@ -68,6 +69,7 @@ function start(){
             $(".horizontal_grid td").html('');
             $(".horizontal_grid").css({"width":0,"height":0});
             $(".horizontal_grid td").css({"width":0,"height":0});
+            bookLayout();
             loadNotation(current_page_num);
         }
     })
