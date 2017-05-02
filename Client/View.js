@@ -120,6 +120,7 @@ function bookLayout(){
             $(".bodyPart").css({"margin-top":navBarHeight+1});
             $(".horizontal_grid").css({"height":pic_size*4, "width": pic_size});
             $(".horizontal_grid td").css({"margin-left":0, "width": pic_size, "height":pic_size});
+            $(".horizontal_grid img").css({"width": pic_size-2, "height":pic_size-2});
             $("iframe").css({"height":iframeHeight,"width":iframeWidth, "margin-left":1, "margin-right": 1});
         }
         else{
@@ -129,8 +130,9 @@ function bookLayout(){
             iframeHeight =  $(".bodyPart").height - 2*pic_size-1;
             $("iframe").css({"height": iframeHeight, "width": winWidth, "margin-top": 0});
             $(".vertical_grid").css({"height":pic_size*2, "width": pic_size*4});
-            $(".vertical_grid").css({"margin-top": iframeHeight,"margin-left":0, "margin-right":0});
+            $(".vertical_grid").css({"margin-top": 0,"margin-left":0, "margin-right":0});
             $(".vertical_grid td").css({"width": pic_size-2, "height":pic_size-2});
+            $(".vertical img").css({"width": pic_size-2, "height":pic_size-2});
         }
 }
 
