@@ -159,6 +159,7 @@ function isBook(current){
     else if(m&&!m[2]){
         bookLayout();
         if (current_name == m[1]){
+            current_page_num = 1;
             loadNotation(current_page_num);
         }
         else{
