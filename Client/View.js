@@ -164,6 +164,9 @@ function get_Notation_list(book_name){
             current_bookList = new BookList(book_list_json);
             // call the BookList.fll_notation
             current_bookList.fill_notation();
+        },
+        error: function(xhr, status, error){
+            alert(error);
         }
     })
 }
