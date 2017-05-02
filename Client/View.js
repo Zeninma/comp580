@@ -104,16 +104,19 @@ function isBook(current){
         return;
     }
     else if(m&&!m[2]){
-        // at the first page
-            // entered before, no need to reload the book
-           // first time into the book, need to initialize
-           // the book and load the book list 
-        current_name = m[1];
-        get_Notation_list(current_name);
-        var default_book_id = current_bookList.id_array[0];
-        get_book(default_book_id);
-        current_page_num = 1;
-        loadNotation(current_page_num);
+        if (current_name == m[1]){
+            loadNotation(current_page_num);
+        }
+        else{
+            // at the first page
+            current_name = m[1];
+            // get a list of annotations bound with the book title
+            get_Notation_list(current_name);
+            var default_book_id = current_bookList.id_array[0];
+            get_book(default_book_id);
+            current_page_num = 1;
+            loadNotation(current_page_num);
+        }
     }
     else if(m[2]){
         // at later pages
