@@ -193,7 +193,8 @@ function loadNotation(page_num){
             curr_td = $('.vertical_grid #grid'+i);
             curr_img =  $('.vertical_grid #grid'+i+' img');
         }
-        curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: '+pic_size+';height:'+pic_size+'; ">');
+        curr_td.html('<img src = "'+pic+'" alt = "pics" >');
+        curr_img.css({"width": pic_size, "height":pic_size});
         curr_img.data("text",text);
     }
 }
