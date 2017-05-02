@@ -116,7 +116,7 @@ function bookLayout(){
             $(".bodyPart").css({"margin-top":navBarHeight+1});
             $(".horizontal_grid").css({"height":pic_size*4, "width": pic_size});
             $(".horizontal_grid td").css({"margin-left":0, "width": pic_size, "height":pic_size});
-            $("iframe").css({"height":iframeHeight,"width":iframeWidth, "margin-left": pic_size+1, "margin-right": pic_size+1});
+            $("iframe").css({"height":iframeHeight,"width":iframeWidth, "margin-left":1, "margin-right": 1});
         }
         else{
             // question how to set up the table so it can become horizontal?
