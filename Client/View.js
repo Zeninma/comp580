@@ -50,14 +50,14 @@ function start(){
             iframeHeight = winHeight - navBarHeight - 1;
             $(".bodyPart").css({"margin-top":navBarHeight+1});
             $(".horizontal_grid").css({"margin-left":0, "width": pic_size-1});
-            $("#iframe").css({"height":iframeHeight, "margin-left": pic_size+1, "margin-right": pic_size+1});
+            $("iframe").css({"height":iframeHeight, "margin-left": pic_size+1, "margin-right": pic_size+1});
         }
         else{
             // question how to set up the table so it can become horizontal?
             pic_size = Math.floor(winWidth * 0.25);
             $(".bodyPart").css({"margin-top":navBarHeight+1 , "margin-left": 0, "margin-right": 0});
             iframeHeight =  $(".bodyPart").height - 2*pic_size-1;
-            $("#iframePart").css({"height": iframeHeight, "width": "100%", "margin-top": 0});
+            $("iframe").css({"height": iframeHeight, "width": "100%", "margin-top": 0});
             $(".vertical_grid").css({"margin-top": iframeHeight,"margin-left":0, "margin-right":0});
         }
 	}, 200);

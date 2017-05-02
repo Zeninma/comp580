@@ -1,13 +1,7 @@
 .picGrid{
-    width: 15%;
     float: left;
 }
 
-#iframePart{
-    width: 69%;
-    float: left;
-}
-
-#my_iframe{
-    width: 100%;
+iframe{
+    float:left;
 }
