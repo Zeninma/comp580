@@ -78,7 +78,7 @@ function start(){
             data: {"bookId":selected_id},
             success: function(book_json, status, jqXHR){
                 // load the given book
-                current_book = new BookList(book_json);
+                current_book = new Book(book_json);
                 // also need to update the current page
                 loadNotation(current_page_num);
             }
