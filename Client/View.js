@@ -112,7 +112,7 @@ function bookLayout(){
             iframeWidth = Math.floor(winWidth * 0.69)-100;
             iframeHeight = winHeight - navBarHeight - 1;
             $(".bodyPart").css({"margin-top":navBarHeight+1});
-            $(".horizontal_grid").css({"height":pic_size*4, "width": pic_size});
+            $(".horizontal_grid").css({"height":pic_size*4, "width": pic_size-2});
             $(".horizontal_grid td").css({"margin-left":0, "width": pic_size-2, "height":pic_size-2});
             $("iframe").css({"height":iframeHeight,"width":iframeWidth, "margin-left": pic_size+1, "margin-right": pic_size+1});
         }
