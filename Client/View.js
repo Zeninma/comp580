@@ -85,6 +85,8 @@ function noBookLayout(){
     var navBarHeight = $("#topNavBar").height();
     $(".bodyPart").css({"margin-top":navBarHeight+1});
     $('iframe').css({"width":winWidth, "height": winHeight - navBarHeight -1});
+    $(".horizontal_grid").css({"height":0, "width": 0});
+    $(".vertical_grid").css({"height":0, "width": 0});
 }
 
 
