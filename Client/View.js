@@ -60,6 +60,9 @@ function start(){
         var clicked = $(e.target);
         if(clicked.attr("id") == "horizontal"){
             layout_mode = 0;
+            $(".vertical_grid td").html('');
+            $(".vertical_grid").css({"width":0,"height":0});
+            $(".vertical_grid td").css({"width":0,"height":0});
             bookLayout()
             $(".bottom_grid td").html('');
             loadNotation(current_page_num);
