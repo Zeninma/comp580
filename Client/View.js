@@ -98,6 +98,7 @@ function isBook(current){
         // not in a book page
         // Hence might be out of the book
         // clear the current_name and current_book
+        $('.picGrud td').html('');
         current_name = '';
         current_book = null;
         current_bookList = null;
@@ -136,6 +137,7 @@ function loadNotation(page_num){
     // number of symbols that are defined and can be added to the
     // page
     var limit = Math.min(curr_page.symbols.length, grid_num_max)-1;
+    $('.picGrud td').html('');
     for(var i = 0; i < limit; i++){
         var tmp_symbol = curr_page.symbols[i];
         var pic = tmp_symbol.pic_url;
