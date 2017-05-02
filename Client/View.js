@@ -187,6 +187,7 @@ function loadNotation(page_num){
         var curr_img = $("<img>");
         curr_img.attr({"src":pic,"alt":text});
         curr_img.data("text",text);
+        curr_img.css({"width":pic_size, "height":pic_size});
         if (layout_mode == 0){
             curr_td = $('.horizontal_grid #grid'+i);
             
