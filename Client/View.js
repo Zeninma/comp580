@@ -106,7 +106,6 @@ function bookLayout(){
         var navBarHeight = $("#topNavBar").height();
         var iframeWidth = 0;
         var iframeHeight = 0;
-        var pic_size = 0;
         if(layout_mode == 0){
             // layout_mode == 0 indicates the horizontal layout
             pic_size = Math.floor(winWidth * 0.15 - 1);
@@ -176,7 +175,7 @@ function loadNotation(page_num){
     // number of symbols that are defined and can be added to the
     // page
     var limit = Math.min(curr_page.symbols.length, grid_num_max)-1;
-    $('.picGrud td').html('');
+    $('.picGrid td').html('');
     for(var i = 0; i < limit; i++){
         var tmp_symbol = curr_page.symbols[i];
         var pic = tmp_symbol.pic_url;
