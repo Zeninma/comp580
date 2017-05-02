@@ -13,6 +13,8 @@ var grid_num_max = 8;
 var current_book;
 var current_bookList;
 var current_name;
+// the size of the picture
+var pic_size;
 // current_page_num is int, which holds
 // the current page number of the book
 // start from 1
@@ -35,19 +37,28 @@ function start(){
 			url=current;
 		}
         // adjust the iframe's size dynamically
+        var winWidth = $(window).innerWidth();
+        var winHeight = $(window).innerHeight();
+        var navBarHeight = $("#topNavBar").height();
+        var iframeWidth = 0;
+        var iframeHeight = 0;
+        var pic_size = 0;
         if(layout_mode == 0){
             // layout_mode == 0 indicates the horizontal layout
-            var winWidth = $(window).innerWidth();
-            var winHeight = $(window).innerHeight();
-            var navBarHeight = $("#topNavBar").height();
-            var iframeWidth = Math.floor(winWidth * 0.69);
-            var iframeHeight = winHeight - navBarHeight - 1;
-            $(".bodyPart").css("margin-top",navBarHeight+1);
-            $("iframe").css("height",iframeHeight);
+            pic_size = winWidth * 0.15 - 1;
+            iframeWidth = Math.floor(winWidth * 0.69);
+            iframeHeight = winHeight - navBarHeight - 1;
+            $(".bodyPart").css({"margin-top":navBarHeight+1});
+            $(".horizontal_grid").css({"margin-left":0, "width": pic_size-1});
+            $("#iframePart").css({"height",iframeHeight, "margin-left": pic_size+1, "margin-right": pic_size+1});
         }
         else{
             // question how to set up the table so it can become horizontal?
-            return;
+            pic_size = Math.floor(winWidth * 0.25);
+            $(".bodyPart").css({"margin-top":navBarHeight+1 , "margin-left": 0, "margin-right": 0});
+            iframeHeight =  $(".bodyPart").height - 2*pic_size-1;
+            $("#iframePart").css({"height": iframeHeight, "width": "100%", "margin-top": 0});
+            $(".vertical_grid").css({"margin-top": iframeHeight,"margin-left":0, "margin-right":0});
         }
 	}, 200);
 
@@ -61,9 +72,14 @@ function start(){
 
     // bound the View click event with layout change
     $("#horizontal").on('click',function(){
+        // pics on two sides
+        $(".bottom_grid td").html('');
         layout_mode = 0;
     });
     $("#vertical").on('click', function(){
+        $(".left_grid td").html('');
+        $(".right_grid td").html('');
+        // pics at bottom
         layout_mode = 1;
     });
 
@@ -142,8 +158,14 @@ function loadNotation(page_num){
         var tmp_symbol = curr_page.symbols[i];
         var pic = tmp_symbol.pic_url;
         var text = tmp_symbol.words;
+        if (layout_mode == 0){
+            var curr_td = $('.horizontal_grid #grid'+i);
+        }
+        else{
+            var curr_td = $('.vertical_grid #grid'+i);
+        }
         var curr_td = $('#grid'+i);
-        curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: 100%">');
+        curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: '+pic_size+';height:'+pic_size+'; ">');
         var curr_img = $('#grid'+i+' img');
         curr_img.data("text",text);
         var tmp = curr_img.data();
