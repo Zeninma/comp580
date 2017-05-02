@@ -130,12 +130,15 @@ function bookLayout(){
             // question how to set up the table so it can become horizontal?
             iframeHeight =  Math.floor((winHeight - navBarHeight)*0.6)-1;
             pic_size = Math.min(Math.floor((winHeight - iframeHeight - navBarHeight))/2-1, Math.floor(winWidth/4));
+            var vertical_grid_height = pic_size*2;
+            var vertical_grid_width = pic_size*4;
             $(".bodyPart").css({"margin-top":navBarHeight+1 , "margin-left": 0, "margin-right": 0});
             $("iframe").css({"height": iframeHeight, "width": winWidth, "margin-top": 0});
-            $(".vertical_grid").css({"height":pic_size*2, "width": pic_size*4});
+            $(".vertical_grid").css({"height":vertical_grid_height, "width": vertical_grid_width});
             $(".vertical_grid").css({"margin-top": 0,"margin-left":0, "margin-right":0});
             $(".vertical_grid td").css({"width": pic_size-2, "height":pic_size-2});
             $(".vertical img").css({"width": pic_size-2, "height":pic_size-2});
+            $(".vertical_grid").css("margin-left": Math.floor((winWidth - vertical_grid_width)/2)-1);
         }
 }
 
