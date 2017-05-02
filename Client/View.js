@@ -72,9 +72,10 @@ function start(){
     function(e){
         var clicked = $(e.target);
         var selected_id = clicked.data('id');
-        $.ajax(url_base + '/hub.php/book/' + selected_id,
+        $.ajax(url_base + '/hub.php/book',
             {type: "GET",
             dataType: "json",
+            data: {"bookId":selected_id},
             success: function(book_json, status, jqXHR){
                 // load the given book
                 current_book = new BookList(book_json);
@@ -143,13 +144,14 @@ function loadNotation(page_num){
     }
 }
 
-function get_Notation_list(book_title){
+function get_Notation_list(book_name){
     // given the book name,
     // query to the server to get a list
     // of versions of Annotations
-      $.ajax(url_base + "/hub.php/bookList/"+book_title,
+      $.ajax(url_base + "/hub.php/bookList",
         {type: "GET",
         dataType: "json",
+        data: {"bookName": book_name},
         success: function(book_list_json, status, jqXHR){
             // book_list_json has two fields:
             // 1.book_id_array
@@ -168,7 +170,7 @@ function get_book(book_id){
     // take the book_id
     // need to retrieve all the existing versions
     // of annotations for the book
-    $.ajax(url_base+ '/hub.php/book/'+book_id,
+    $.ajax(url_base+ '/hub.php/book',
         {
         type: "GET",
         crossDomain: true,
@@ -176,6 +178,7 @@ function get_book(book_id){
             withCredentials: true
         },
         dataType: "json",
+        data: {"bookId": book_id},
         success: function(book_json, status, jqXHR){
             current_book = new Book(book_json);
         }
