@@ -104,21 +104,15 @@ function isBook(current){
     }
     else if(m&&!m[2]){
         // at the first page
-        if (!(current_name=== null )&& (m[1] == current_name)){
             // entered before, no need to reload the book
-            current_page_num  = 1;
-            loadNotation(1);
-        }
-       else{
            // first time into the book, need to initialize
            // the book and load the book list 
-            current_name = m[1];
-            get_Notation_list(current_name);
-            var default_book_id = current_bookList.id_array[0];
-            get_book(default_book_id);
-            current_page_num = 1;
-            loadNotation(current_page_num);
-       }
+        current_name = m[1];
+        get_Notation_list(current_name);
+        var default_book_id = current_bookList.id_array[0];
+        get_book(default_book_id);
+        current_page_num = 1;
+        loadNotation(current_page_num);
     }
     else if(m[2]){
         // at later pages
