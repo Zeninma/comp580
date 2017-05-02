@@ -112,7 +112,8 @@ function bookLayout(){
             iframeWidth = Math.floor(winWidth * 0.69);
             iframeHeight = winHeight - navBarHeight - 1;
             $(".bodyPart").css({"margin-top":navBarHeight+1});
-            $(".horizontal_grid").css({"margin-left":0, "width": pic_size-1});
+            $(".horizontal_grid").css({"height":pic_size*4, "width": pic_size});
+            $(".horizontal_grid td").css({"margin-left":0, "width": pic_size-1, "height":pic_size-1});
             $("iframe").css({"height":iframeHeight, "margin-left": pic_size+1, "margin-right": pic_size+1});
         }
         else{
@@ -121,7 +122,9 @@ function bookLayout(){
             $(".bodyPart").css({"margin-top":navBarHeight+1 , "margin-left": 0, "margin-right": 0});
             iframeHeight =  $(".bodyPart").height - 2*pic_size-1;
             $("iframe").css({"height": iframeHeight, "width": "100%", "margin-top": 0});
+            $(".vertical_grid").css({"height":pic_size*2, "width": pic_size*4});
             $(".vertical_grid").css({"margin-top": iframeHeight,"margin-left":0, "margin-right":0});
+            $(".vertical_grid td").css({"width": pic_size-2, "height":pic_size-2});
         }
 }
 
@@ -192,7 +195,6 @@ function loadNotation(page_num){
         }
         curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: '+pic_size+';height:'+pic_size+'; ">');
         curr_img.data("text",text);
-        var tmp = curr_img.data();
     }
 }
 
