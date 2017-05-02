@@ -110,8 +110,8 @@ function noBookLayout(){
 
 function bookLayout(){
      // adjust the iframe's size dynamically
-        var winWidth = $(window).innerWidth();
-        var winHeight = $(window).innerHeight();
+        var winWidth = $(window).width();
+        var winHeight = $(window).height();
         var navBarHeight = $("#topNavBar").height();
         var iframeWidth = 0;
         var iframeHeight = 0;
