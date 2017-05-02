@@ -56,7 +56,7 @@ function start(){
     });
 
     // bound the View click event with layout change
-    $(document).on('click','.versionDropDown',function(e){
+    $(document).on('click','#versionDropDown',function(e){
         var clicked = $(e.target);
     })
     // $("#horizontal").on('click',function(){
