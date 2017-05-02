@@ -58,15 +58,16 @@ function start(){
     // bound the View click event with layout change
     $(document).on('click','#versionDropDown',function(e){
         var clicked = $(e.target);
-        if(clicked.html == "Horizontal"){
+        if(clicked.attr("id") == "horizontal"){
              layout_mode = 0;
             $(".bottom_grid td").html('');
             loadNotation(current_page_num);
         }
         else{
             layout_mode = 1;
-            $(".left_grid td").html('');
-            $(".right_grid td").html('');
+            $(".horizontal_grid td").html('');
+            $(".horizontal_grid").css({"width":0,"height":0});
+            $(".horizontal_grid td").css({"width":0,"height":0});
             loadNotation(current_page_num);
         }
     })
