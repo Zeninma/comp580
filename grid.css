@@ -2,6 +2,10 @@
     float: left;
 }
 
-iframe{
-    float:left;
+#iframePart{
+    float: left;
+}
+
+#my_iframe{
+    width: 100%;
 }
