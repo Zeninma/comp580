@@ -12,7 +12,7 @@ var grid_num_max = 8;
 // user quit the reading process.
 var current_book;
 var current_bookList;
-var current_name;
+var current_name='';
 // the size of the picture
 var pic_size;
 // current_page_num is int, which holds
@@ -31,6 +31,12 @@ function start(){
     setInterval(function(){
         // set the interval to check the current path
 		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
+        if(current_name!=''){
+            bookLayout();
+        }
+        else{
+            noBookLayout();
+        }
 		if(current != url){
 			console.log('change', current);
             isBook(current);
