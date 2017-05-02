@@ -31,12 +31,15 @@ function start(){
     setInterval(function(){
         // set the interval to check the current path
 		var current=$('#my_iframe').get(0).contentWindow.location.pathname;
-        if(current_name!=''){
+        // dynamically change the layout
+        var re=/^\/\d+\/\d+\/\d+\/([^\/]+)\/(?:(\d+)\/)?(?:\?.*)?$/,
+        m=current.match(re);
+        if(!m){
+            noBookLayout();
+        }else{
             bookLayout();
         }
-        else{
-            noBookLayout();
-        }
+
 		if(current != url){
 			console.log('change', current);
             isBook(current);
