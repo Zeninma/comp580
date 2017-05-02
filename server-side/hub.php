@@ -17,8 +17,8 @@ ini_set('display_errors', 1);
 
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
-        if ((count($path_components)==3)&&($path_components[1] == "book")){
-            $bookId = intval($path_components[2]);
+        if ((count($path_components)==2)&&($path_components[1] == "book")){
+            $bookId = intval($_GET["bookId"]);
            if(is_null($bookId)){
                 header("HTTP/1.0 404 NOT FOUND");
                 print("Missing Parameter bookId");
@@ -31,8 +31,8 @@ ini_set('display_errors', 1);
                 exit();
             }
         }
-        else if ((count($path_components)==3)&&($path_components[1] == "bookList")){
-            $bookName = trim($path_components[2]);
+        else if ((count($path_components)==2)&&($path_components[1] == "bookList")){
+            $bookName = trim($_GET["bookName"]);
             if(is_null($bookName)){
                 header("HTTP/1.0 404 NOT FOUND");
                 print("Missing Parameter bookName");

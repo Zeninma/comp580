@@ -72,7 +72,7 @@ function start(){
     function(e){
         var clicked = $(e.target);
         var selected_id = clicked.data('id');
-        $.ajax(url_base + 'hub.php/book/' + selected_id,
+        $.ajax(url_base + '/hub.php/book/' + selected_id,
             {type: "GET",
             dataType: "json",
             success: function(book_json, status, jqXHR){
