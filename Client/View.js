@@ -84,7 +84,7 @@ function noBookLayout(){
     var winHeight = $(window).innerHeight();
     var navBarHeight = $("#topNavBar").height();
     $(".bodyPart").css({"margin-top":navBarHeight+1});
-    $('iframe').css({"width":"100%", "height": "100%"});
+    $('iframe').css({"width":winWidth, "height": winHeight - navBarHeight -1});
 }
 
 
@@ -98,7 +98,7 @@ function bookLayout(){
         var pic_size = 0;
         if(layout_mode == 0){
             // layout_mode == 0 indicates the horizontal layout
-            pic_size = winWidth * 0.15 - 1;
+            pic_size = Math.floor(winWidth * 0.15 - 1);
             iframeWidth = Math.floor(winWidth * 0.69);
             iframeHeight = winHeight - navBarHeight - 1;
             $(".bodyPart").css({"margin-top":navBarHeight+1});
