@@ -35,30 +35,6 @@ function start(){
 			console.log('change', current);
             isBook(current);
 			url=current;
-		}
-        // adjust the iframe's size dynamically
-        var winWidth = $(window).innerWidth();
-        var winHeight = $(window).innerHeight();
-        var navBarHeight = $("#topNavBar").height();
-        var iframeWidth = 0;
-        var iframeHeight = 0;
-        var pic_size = 0;
-        if(layout_mode == 0){
-            // layout_mode == 0 indicates the horizontal layout
-            pic_size = winWidth * 0.15 - 1;
-            iframeWidth = Math.floor(winWidth * 0.69);
-            iframeHeight = winHeight - navBarHeight - 1;
-            $(".bodyPart").css({"margin-top":navBarHeight+1});
-            $(".horizontal_grid").css({"margin-left":0, "width": pic_size-1});
-            $("iframe").css({"height":iframeHeight, "margin-left": pic_size+1, "margin-right": pic_size+1});
-        }
-        else{
-            // question how to set up the table so it can become horizontal?
-            pic_size = Math.floor(winWidth * 0.25);
-            $(".bodyPart").css({"margin-top":navBarHeight+1 , "margin-left": 0, "margin-right": 0});
-            iframeHeight =  $(".bodyPart").height - 2*pic_size-1;
-            $("iframe").css({"height": iframeHeight, "width": "100%", "margin-top": 0});
-            $(".vertical_grid").css({"margin-top": iframeHeight,"margin-left":0, "margin-right":0});
         }
 	}, 200);
 
@@ -103,6 +79,41 @@ function start(){
     })
 }
 
+function noBookLayout(){
+    var winWidth = $(window).innerWidth();
+    var winHeight = $(window).innerHeight();
+    var navBarHeight = $("#topNavBar").height();
+    $(".bodyPart").css({"margin-top":navBarHeight+1});
+    $('iframe').css({"width":"100%", "height": "100%"});
+}
+
+
+function bookLayout(){
+     // adjust the iframe's size dynamically
+        var winWidth = $(window).innerWidth();
+        var winHeight = $(window).innerHeight();
+        var navBarHeight = $("#topNavBar").height();
+        var iframeWidth = 0;
+        var iframeHeight = 0;
+        var pic_size = 0;
+        if(layout_mode == 0){
+            // layout_mode == 0 indicates the horizontal layout
+            pic_size = winWidth * 0.15 - 1;
+            iframeWidth = Math.floor(winWidth * 0.69);
+            iframeHeight = winHeight - navBarHeight - 1;
+            $(".bodyPart").css({"margin-top":navBarHeight+1});
+            $(".horizontal_grid").css({"margin-left":0, "width": pic_size-1});
+            $("iframe").css({"height":iframeHeight, "margin-left": pic_size+1, "margin-right": pic_size+1});
+        }
+        else{
+            // question how to set up the table so it can become horizontal?
+            pic_size = Math.floor(winWidth * 0.25);
+            $(".bodyPart").css({"margin-top":navBarHeight+1 , "margin-left": 0, "margin-right": 0});
+            iframeHeight =  $(".bodyPart").height - 2*pic_size-1;
+            $("iframe").css({"height": iframeHeight, "width": "100%", "margin-top": 0});
+            $(".vertical_grid").css({"margin-top": iframeHeight,"margin-left":0, "margin-right":0});
+        }
+}
 
 function isBook(current){
     // take the current path of the content inside iframe;
@@ -119,9 +130,10 @@ function isBook(current){
         current_book = null;
         current_bookList = null;
         current_page_num = null;
-        return;
+        noBookLayout();
     }
     else if(m&&!m[2]){
+        bookLayout();
         if (current_name == m[1]){
             loadNotation(current_page_num);
         }
@@ -137,7 +149,7 @@ function isBook(current){
         }
     }
     else if(m[2]){
-        // at later pages
+        bookLayout();
         current_page_num = m[2];
         loadNotation(current_page_num);
     }
