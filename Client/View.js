@@ -154,6 +154,7 @@ function get_Notation_list(book_name){
       $.ajax(url_base + "/hub.php/bookList",
         {type: "GET",
         dataType: "json",
+        async: false,
         data: {"bookName": book_name},
         success: function(book_list_json, status, jqXHR){
             // book_list_json has two fields:
