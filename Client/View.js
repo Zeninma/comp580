@@ -180,15 +180,17 @@ function loadNotation(page_num){
         var tmp_symbol = curr_page.symbols[i];
         var pic = tmp_symbol.pic_url;
         var text = tmp_symbol.words;
+        var curr_td;
+        var curr_img;
         if (layout_mode == 0){
-            var curr_td = $('.horizontal_grid #grid'+i);
+            curr_td = $('.horizontal_grid #grid'+i);
+            cur_img =  $('.horizontal_grid #grid'+i+' img');
         }
         else{
-            var curr_td = $('.vertical_grid #grid'+i);
+            curr_td = $('.vertical_grid #grid'+i);
+            cur_img =  $('.vertical_grid #grid'+i+' img');
         }
-        var curr_td = $('#grid'+i);
         curr_td.html('<img src = "'+pic+'" alt = "pics" style = "width: '+pic_size+';height:'+pic_size+'; ">');
-        var curr_img = $('#grid'+i+' img');
         curr_img.data("text",text);
         var tmp = curr_img.data();
     }
