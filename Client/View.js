@@ -184,18 +184,17 @@ function loadNotation(page_num){
         var pic = tmp_symbol.pic_url;
         var text = tmp_symbol.words;
         var curr_td;
-        var curr_img;
+        var curr_img = $("<img>");
+        curr_img.attr({"src":pic,"alt":text});
+        curr_img.data("text",text);
         if (layout_mode == 0){
             curr_td = $('.horizontal_grid #grid'+i);
-            curr_img =  $('.horizontal_grid #grid'+i+' img');
+            
         }
         else{
             curr_td = $('.vertical_grid #grid'+i);
-            curr_img =  $('.vertical_grid #grid'+i+' img');
         }
-        curr_td.html('<img src = "'+pic+'" alt = "pics" >');
-        curr_img.css({"width": pic_size, "height":pic_size});
-        curr_img.data("text",text);
+        curr_td.append(curr_img);
     }
 }
 
