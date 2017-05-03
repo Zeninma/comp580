@@ -55,11 +55,26 @@ ini_set('display_errors', 1);
         }
         // The following may need to be deleted
         else{
+             header("HTTP/1.0 404 NOT FOUND");
+             print("No relavant method found");
+             exit();
+        }
+    }
+    else if($_SERVER['REQUEST_METHOD'] == "POST"){
+        if((count($path_components)==2)&&($path_components[1] == "newBook")){
+            echo var_dump($_POST)+'<br>';
+            $decodeString = json_decode($_POST["annotations"]);
+             echo var_dump($decodeString)+'<br>';
+        }
+        else{
+            header("HTTP/1.0 404 NOT FOUND");
+            print("No relavant method found");
             exit();
         }
     }
     else{
-        // Need to fill with extra Post method
+        header("HTTP/1.0 404 NOT FOUND");
+        print("No relavant method found");
         exit();
     }
      
