@@ -128,7 +128,14 @@ function start(){
                 })
                 new_a.append(new_img);
                 new_div.append(new_a);
-                $("#addedImg row").append(new_div);
+                var row1Num = $('#addedImgRow1').length;
+                var row2Num = $('#addedImgRow1').length;
+                if(row1Num<4){
+                    $('#addedImgRow1').append(new_div);
+                }
+                else{
+                    $('#addedImgRow2').append(new_div);
+                }
             }})
        }
        else{
