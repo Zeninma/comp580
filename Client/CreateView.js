@@ -104,7 +104,7 @@ function start(){
         }
     })
 
-    $("#submitbtn").on('click',function(e){
+    $(document).on('click','#submitbtn',function(e){
        if(addedImg.length<8){
          $.ajax(url_base+"/hub.php/symbol",
             {type: "GET",
