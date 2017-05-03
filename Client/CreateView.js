@@ -167,7 +167,7 @@ function loadStandardSymbols(symbol_set_json){
 
 function uploadBook(){
     $.ajax(url_base + "/hub.php/newBook",
-    {type: "POST",
+    {type: "GET",
     dataType: "json",
     data: JSON.stringify(book),
     success: function(json, status, jqXHR){
