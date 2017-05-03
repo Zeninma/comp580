@@ -25,10 +25,9 @@ class Book{
         if($result){
             $bookId = $mysqli->insert_id;
             foreach($annotations as $annotation){
-                $annotation = json_decode(json_encode($annotation));
                 echo var_dump($annotation)."<br>";
-                $pageNum = intval($annotation["pagenum"]);
-                $symbolId = intval($annotation["symbolID"]);
+                $pageNum = intval($annotation->pagenum);
+                $symbolId = intval($annotation->symbolID);
                 $mysqli->query(
                     'insert into Annotation (bookId, pagenum, symbolID) values ('.$bookId.','.$pageNum.','.$symbolId.')'
                 );
