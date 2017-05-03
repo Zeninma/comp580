@@ -107,6 +107,7 @@ function start(){
        if(addedImg.length<8){
          $.ajax(url_base+"/hub.php/symbol",
             {type: "GET",
+            contentType: 'application/json',
             dataType: "json",
             data: $("#cusForm").serialize(),
             success: function(idJson, status, jqXHR){
@@ -168,6 +169,7 @@ function loadStandardSymbols(symbol_set_json){
 function uploadBook(){
     $.ajax(url_base + "/hub.php/newBook",
     {type: "GET",
+    contentType: 'application/json',
     dataType: "json",
     data: JSON.stringify(book),
     success: function(json, status, jqXHR){
