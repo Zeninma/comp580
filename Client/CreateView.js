@@ -111,7 +111,7 @@ function start(){
 
 function loadStandardSymbols(symbol_set_json){
     var url, text, id;
-    var containerRow = $("#standardSymbols .row");
+    var containerRow = $("#standardSymbols");
     for(var i=0; i < symbol_set_json.length; i++){
         url = symbol_set_json[i].url;
         text = symbol_set_json[i].text;
