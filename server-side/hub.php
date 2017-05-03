@@ -65,12 +65,6 @@ ini_set('display_errors', 1);
             }
         }
         // The following may need to be deleted
-        else{
-             header("HTTP/1.0 404 NOT FOUND");
-             print("No relavant method found");
-             exit();
-        }
-    }
     else{
         header("HTTP/1.0 404 NOT FOUND");
         print("No relavant method found");
