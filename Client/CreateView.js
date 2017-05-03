@@ -40,7 +40,7 @@ function start(){
             addedImg.push(imgUrl);
             var new_div = $('<div></div>');
             new_div.data("idx",curr_page-1);
-            new_div.attr("class","class","col-lg-3 col-md-4 col-xs-6 thumb");
+            new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
             var new_a = $('<a class="thumbnail"></a>');
             var new_img = $('<img class="img-responsive" src="'+imgUrl+'">');
             var new_button = $('<button type= "button">delete</button>');
