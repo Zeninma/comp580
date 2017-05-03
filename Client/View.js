@@ -153,6 +153,7 @@ function isBook(current){
         // not in a book page
         // Hence might be out of the book
         // clear the current_name and current_book
+        $("#create").remove();
         $('.picGrid td').html('');
         current_name = '';
         current_book = null;
@@ -169,9 +170,8 @@ function isBook(current){
         else{
             // at the first page
             // add create button on the nav bar
-            var li = $("<li> </li>");
-            li.data("url","http://test.tarheelreader.org/CHAIR/create.html#"+m[1]);
-            li.html('<a href="http://test.tarheelreader.org/CHAIR/project.html#'+m[1]+'">Create</a>');
+            var li = $('<li id="create"> </li>');
+            li.html('<a href="http://test.tarheelreader.org/CHAIR/create.html#'+m[1]+'" target = "_blank">Create</a>');
             $("#nav_ul").append(li)
             current_name = m[1];
             // get a list of annotations bound with the book title
