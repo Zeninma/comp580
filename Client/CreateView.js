@@ -81,7 +81,7 @@ function start(){
         }
     })
 
-    $("#complete").on('click',function(){
+    $(document).on('click',"#complete",function(){
         //construct a pagePost object
         var tmp_page = new PagePost(addedImg);
         book.push(tmp_page);
