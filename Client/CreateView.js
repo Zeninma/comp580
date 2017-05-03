@@ -23,7 +23,7 @@ function start(){
 
     // get a set of symbol
     // where each symbol contains symbolId, url, text
-    $.ajax(url_base + 'hub.php/standardSymbol',
+    $.ajax(url_base + '/hub.php/standardSymbol',
     {type: "GET",
     success: function(symbol_set_json, status, jqXHR){
         loadStandardSymbols(symbol_set_json);
