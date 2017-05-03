@@ -49,6 +49,7 @@ function start(){
                 new_div.remove();
             })
             new_a.append(new_img);
+            new_a.append(new_button);
             new_div.append(new_a);
             $("#addedImg .row").append(new_div);
         }
