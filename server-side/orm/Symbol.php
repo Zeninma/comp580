@@ -54,6 +54,20 @@ class Symbol{
         }
     }
 
+    public function addSymbol($url, $text){
+        $mysqli = Symbol::connect();
+         $result = $mysqli->query(
+            'insert into Symbol (url, wordstosay) values ("'.$url.'","'.$text.'")'
+        );
+        if($result){
+            $id = $mysqli->insert_id;
+            return $id;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function get_array(){
         $result_array = array(
             'url' => $this->url,

@@ -62,9 +62,18 @@ ini_set('display_errors', 1);
                 exit();
         }
         else if ((count($path_components)==2)&&($path_components[1] == "symbol")){
-            echo var_dump($_REQUEST["url"]);
-            echo var_dump($_GET);
-            exit();
+            $url = $_REQUEST["url"];
+            $text = $_REQUEST["text"];
+            $symbolId = Symbol::addSymbol($url,$text);
+            if($symbolId){
+                header("Content-type: application/json");
+                 print(json_encode($symbolId));
+                exit();
+            }else{
+                header("HTTP/1.0 400 BAD REQUEST");
+                print("Illegal url or text");
+                exit();
+            }
         }
         else{
             header("HTTP/1.0 404 NOT FOUND");
