@@ -104,7 +104,7 @@ function start(){
         else{
             currPage ++;
             addedImg = new Array();
-            $("#addedImg row").html('');
+            $("#addedImg .row").html('');
         }
     })
 
