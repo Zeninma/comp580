@@ -43,7 +43,7 @@ function start(){
             new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
             var new_a = $('<a class="thumbnail"></a>');
             var new_img = $('<img class="img-responsive" src="'+imgUrl+'">');
-            new_img.attr({'width':400,'height':300});
+            new_img.attr({'width':252,'height':214});
             var new_button = $('<button type= "button">delete</button>');
             new_button.on('click',function(){
                 addedImg.splice(new_div.data("idx"),1);
@@ -64,7 +64,7 @@ function start(){
             new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
             var new_a = $('<a class="thumbnail"></a>');
             var new_img = $('<img class="img-responsive" src="'+imgUrl+'">');
-            new_img.attr({'width':400,'height':300})
+            new_img.attr({'width':252,'height':214});
             var new_button = $('<button type= "button">delete</button>');
             new_button.on('click',function(){
                 addedImg.splice(new_div.data("idx"),1);
@@ -123,7 +123,7 @@ function start(){
                 new_div.attr("class","class","col-lg-3 col-md-4 col-xs-6 thumb");
                 var new_a = $('<a class="thumbnail"></a>');
                 var new_img = $('<img class="img-responsive" src="'+url+'">');
-                new_img.attr({'width':400,'height':300});
+                new_img.attr({'width':252,'height':214});
                 var new_button = $('<button type= "button">delete</button>');
                 new_button.on('click',function(){
                     addedImg.splice(new_div.data("idx"),1);
@@ -164,7 +164,7 @@ function loadStandardSymbols(symbol_set_json){
             var new_img = $('<img class="img-responsive" src="'+url+'">');
             var new_span = $('<span style = "width:100%; text-align: center;">'+text+'</span>');
             new_img.data({"url":url,"text":text,"id":id});
-            new_img.attr({'width':400,'height':300})
+            new_img.attr({'width':252,'height':214});
             new_a.append(new_img);
             new_a.append(new_span);
             new_div.append(new_a);
