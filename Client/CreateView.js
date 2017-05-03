@@ -141,4 +141,4 @@ function uploadBook(){
     })
 }
 
-start();
+window.onload = start();
