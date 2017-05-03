@@ -29,7 +29,7 @@ function start(){
         loadStandardSymbols(symbol_set_json);
     }});
 
-    curr_page = 1;
+    currPage = 1;
     addedImg = new Array();
 
 
@@ -83,7 +83,7 @@ function start(){
 
     $(document).on('click',"#complete",function(){
         //construct a pagePost object
-        var tmp_page = new PagePost(addedImg);
+        var tmp_page = new PagePost(addedImg, currPage);
         book.push(tmp_page);
         $("#alertDiv").attr("class","alert alert-success alert-dismissable");
         $(".alert-success").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
