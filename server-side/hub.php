@@ -58,7 +58,7 @@ ini_set('display_errors', 1);
                 $annotations = json_decode(json_encode($annotations[0]));
                 $book_name = $_GET['name'];
                 $anno_name = $_GET['annoName'];
-                echo var_dump($annotations)+'<br>';
+                echo var_dump($annotations["annotations"])+'<br>';
                 Book::addNewBook($book_name, $anno_name,$annotations);
         }
         else{
