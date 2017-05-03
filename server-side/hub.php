@@ -7,6 +7,7 @@ ini_set('display_errors', 1);
     require_once('orm/Page.php');
     require_once('orm/Symbol.php');
 
+    echo "at least in the server";
     if(isset($_SERVER['PATH_INFO'])){
         $path_components = explode('/', $_SERVER['PATH_INFO']);
     }
