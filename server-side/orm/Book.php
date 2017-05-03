@@ -21,6 +21,7 @@ class Book{
        $result = $mysqli -> query(
             'insert into Book (bookName, annoName) values ("'.$bookName.'","'.'"'.$annoName.'")'
         );
+        echo 'insert into Book (bookName, annoName) values ("'.$bookName.'","'.'"'.$annoName.'")'.'<br>';
         // NOTE that, $resut also contain id for the new book object
         if($result){
             $bookId = $result->insert_id;
