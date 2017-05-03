@@ -141,6 +141,4 @@ function uploadBook(){
     })
 }
 
-$(document).ready(
-    start()
-);
+start();
