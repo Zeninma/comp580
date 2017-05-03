@@ -33,8 +33,8 @@ function start(){
     addedImg = new Array();
 
 
-    $(document).on('click', '#standardSymbols .row div',function(e){
-        if(addedImg.length<8){
+    $(document).on('click', '#standardSymbols div',function(e){
+        if(addedImg.length<4){
             var clicked = $(e.target);
             var imgUrl = clicked.data("url");
             addedImg.push(imgUrl);
@@ -51,7 +51,26 @@ function start(){
             new_a.append(new_img);
             new_a.append(new_button);
             new_div.append(new_a);
-            $("#addedImg .row").append(new_div);
+            $("#addedImg .row1").append(new_div);
+        }
+        else if(addedImg.length<8){
+            var clicked = $(e.target);
+            var imgUrl = clicked.data("url");
+            addedImg.push(imgUrl);
+            var new_div = $('<div></div>');
+            new_div.data("idx",curr_page-1);
+            new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
+            var new_a = $('<a class="thumbnail"></a>');
+            var new_img = $('<img class="img-responsive" src="'+imgUrl+'">');
+            var new_button = $('<button type= "button">delete</button>');
+            new_button.on('click',function(){
+                addedImg.splice(new_div.data("idx"),1);
+                new_div.remove();
+            })
+            new_a.append(new_img);
+            new_a.append(new_button);
+            new_div.append(new_a);
+            $("#addedImg .row2").append(new_div);
         }
         else{
              $("#alertDiv").attr("class","alert alert-warning alert-dismissable")
