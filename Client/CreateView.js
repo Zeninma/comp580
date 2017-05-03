@@ -50,7 +50,7 @@ function start(){
             })
             new_a.append(new_img);
             new_div.append(new_a);
-            $("#addedImg row").append(new_div);
+            $("#addedImg .row").append(new_div);
         }
         else{
              $("#alertDiv").attr("class","alert alert-warning alert-dismissable")
