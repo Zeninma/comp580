@@ -18,9 +18,9 @@ class Book{
         // To add new book
        $mysqli = Book::connect();
        $result = $mysqli -> query(
-            'insert into Book values (0,"'+$bookName+'","'+'"'+$annoName+'")'
+            'insert into Book values (0,"'.$bookName.'","'.'"'.$annoName.'")'
         );
-        echo  'insert into Book values (0,"'+$bookName+'","'+'"'+$annoName+'")';
+        echo  'insert into Book values (0,"'.$bookName+'","'.'"'.$annoName.'")';
         // NOTE that, $resut also contain id for the new book object
         if($result){
             $bookId = $result->insert_id;
@@ -28,7 +28,7 @@ class Book{
                 $pageNum = intval($annotation["pagenum"]);
                 $symbolId = intval($annotation["symbolID"]);
                 $mysqli->query(
-                    'insert into Annotation values (0,'+$bookId+','+$pageNum+','+$symbolId +')'
+                    'insert into Annotation values (0,'.$bookId.','.$pageNum.','.$symbolId.')'
                 );
             }
             return true;
