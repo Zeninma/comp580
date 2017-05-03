@@ -54,11 +54,11 @@ ini_set('display_errors', 1);
             exit();
         }
         else if((count($path_components)==2)&&($path_components[1] == "newBook")){
-                $annotations = json_decode($_GET['annotations']);
+                $annotations = json_decode($_GET['annotations'])[0];
                 $book_name = $_GET['name'];
                 $anno_name = $_GET['annoName'];
-                echo var_dump($annotations)+'<br>';
-                Book::addNewBook($book_name, $anno_name,$annotations[0]);
+                echo var_dump($annotations["annotations"])+'<br>';
+                Book::addNewBook($book_name, $anno_name,$annotations["annotations"]);
             }
             else{
                 header("HTTP/1.0 404 NOT FOUND");
