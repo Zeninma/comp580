@@ -54,7 +54,7 @@ ini_set('display_errors', 1);
             exit();
         }
         else if((count($path_components)==2)&&($path_components[1] == "newBook")){
-                $annotations = json_decode($_GET['annotations']);
+                $annotations = json_decode(json_encode($_GET['annotations']));
                 $annotations = $annotations[0];
                 $book_name = $_GET['name'];
                 $anno_name = $_GET['annoName'];
