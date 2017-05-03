@@ -168,6 +168,11 @@ function isBook(current){
         }
         else{
             // at the first page
+            // add create button on the nav bar
+            var li = $("<li> </li>");
+            li.data("url","http://test.tarheelreader.org/CHAIR/create.html#"+m[1]);
+            li.html('<a href="http://test.tarheelreader.org/CHAIR/project.html#'+m[1]+'">Create</a>');
+            $("#nav_ul").append(li)
             current_name = m[1];
             // get a list of annotations bound with the book title
             get_Notation_list(current_name);
