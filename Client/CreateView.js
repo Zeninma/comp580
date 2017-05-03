@@ -32,12 +32,6 @@ function start(){
     currPage = 1;
     addedImg = new Array();
 
-/*************** Debug purpose, need to delete *****************************************/
-    pageNum = 1;
-/*************** *****************************************/
-/*************** *****************************************/
-/*************** *****************************************/
-
     $(document).on('click', '#standardSymbols div img',function(e){
         if(addedImg.length<4){
             var clicked = $(e.target);
@@ -98,7 +92,8 @@ function start(){
             $(".alert-warning").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
             ' <strong>Warning</strong> You need to add 8 images per page');
         }
-        else if(currPage == pageNum){
+        // for debug purpose needs to be deleted
+        else if(currPage == 1){
             uploadBook();
         }
         else{
