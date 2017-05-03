@@ -112,12 +112,13 @@ function start(){
 function loadStandardSymbols(symbol_set_json){
     var url, text, id;
     var container= $("#standardSymbols");
-    for(var i=0; i < symbol_set_json.length; i++){
+    var count = 0;
+    for(var i=0; i < Math.ceil(symbol_set_json.length/4); i++){
         var new_row = $('<div class="row"></div>');
        for(var j=0; j<4; j++){
-            url = symbol_set_json[i].url;
-            text = symbol_set_json[i].text;
-            id = symbol_set_json[i].id;
+            url = symbol_set_json[count].url;
+            text = symbol_set_json[count].text;
+            id = symbol_set_json[count].id;
             var new_div = $("<div> <div>"); 
             new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
             var new_a = $('<a class="thumbnail"></a>');
@@ -128,6 +129,10 @@ function loadStandardSymbols(symbol_set_json){
             new_a.append(new_span);
             new_div.append(new_a);
             new_row.append(new_div);
+            count++;
+            if(count == symbol_set_json.length){
+                break;
+            }
        }
        container.append(new_row);
     }
