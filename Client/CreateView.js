@@ -111,21 +111,25 @@ function start(){
 
 function loadStandardSymbols(symbol_set_json){
     var url, text, id;
-    var containerRow = $("#standardSymbols");
+    var container= $("#standardSymbols");
     for(var i=0; i < symbol_set_json.length; i++){
-        url = symbol_set_json[i].url;
-        text = symbol_set_json[i].text;
-        id = symbol_set_json[i].id;
-        var new_div = $("<div> <div>"); 
-        new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
-        var new_a = $('<a class="thumbnail"></a>');
-        var new_img = $('<img class="img-responsive" src="'+url+'">');
-        var new_span = $('<span style = "width:100%; text-align: center;">'+text+'</span>');
-        new_img.data({"url":url,"text":text,"id":id});
-        new_a.append(new_img);
-        new_a.append(new_span);
-        new_div.append(new_a);
-        containerRow.append(new_div);
+        var new_row = $('<div class="row"></div>');
+       for(var j=0; j<4; j++){
+            url = symbol_set_json[i].url;
+            text = symbol_set_json[i].text;
+            id = symbol_set_json[i].id;
+            var new_div = $("<div> <div>"); 
+            new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
+            var new_a = $('<a class="thumbnail"></a>');
+            var new_img = $('<img class="img-responsive" src="'+url+'">');
+            var new_span = $('<span style = "width:100%; text-align: center;">'+text+'</span>');
+            new_img.data({"url":url,"text":text,"id":id});
+            new_a.append(new_img);
+            new_a.append(new_span);
+            new_div.append(new_a);
+            new_row.append(new_div);
+       }
+       container.append(new_row);
     }
 }
 
