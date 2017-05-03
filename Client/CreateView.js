@@ -33,7 +33,7 @@ function start(){
     addedImg = new Array();
 
 
-    $(document).on('click', '#standardSymbols row div',function(e){
+    $(document).on('click', '#standardSymbols .row div',function(e){
         if(addedImg.length<8){
             var clicked = $(e.target);
             var imgUrl = clicked.data("url");
@@ -111,7 +111,7 @@ function start(){
 
 function loadStandardSymbols(symbol_set_json){
     var url, text, id;
-    var containerRow = $("#standardSymbols row");
+    var containerRow = $("#standardSymbols .row");
     for(var i=0; i < symbol_set_json.length; i++){
         url = symbol_set_json[i].url;
         text = symbol_set_json[i].text;
