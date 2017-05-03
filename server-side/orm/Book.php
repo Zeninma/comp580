@@ -16,17 +16,15 @@ class Book{
 
     public static function addNewBook($bookName, $annoName, $annotations){
         // To add new book
-        echo "in the book <br>";
-        echo var_dump($bookName)+', '+var_dump($annoName)+', '+var_dump($annotations)+'<br>';
        $mysqli = Book::connect();
        $result = $mysqli -> query(
-            'insert into Book values (0,"'+$mysqli->real_escape_string($bookName)+'","'+'"'+$mysqli->real_escape_string($annoName)+'")'
+            'insert into Book values (0,"'+$bookName+'","'+'"'+$annoName+'")'
         );
-        echo  'insert into Book values (0,"'+$mysqli->real_escape_string($bookName)+'","'+'"'+$mysqli->real_escape_string($annoName)+'")';
+        echo  'insert into Book values (0,"'+$bookName+'","'+'"'+$annoName+'")';
         // NOTE that, $resut also contain id for the new book object
         if($result){
             $bookId = $result->insert_id;
-            foreach($annotation as $annotation){
+            foreach($annotations as $annotation){
                 $pageNum = intval($annotation["pagenum"]);
                 $symbolId = intval($annotation["symbolID"]);
                 $mysqli->query(

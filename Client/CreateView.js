@@ -83,7 +83,7 @@ function start(){
     $(document).on('click',"#complete",function(){
         //construct a pagePost object
         var tmp_page = new PagePost(addedImg, currPage);
-        book.push(tmp_page);
+        book.add(tmp_page);
         $("#alertDiv").attr("class","alert alert-success alert-dismissable");
         $(".alert-success").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
             ' <strong>Success!</strong> Added new set of annotations for page '+currPage);
@@ -114,7 +114,7 @@ function start(){
                 var givenId = parseInt(idJson.id);
                 var url = $('input[name="url"]').val();
                 var text = $('input[name="text"]').val();
-                addedImg.push(url);
+                addedImg.push(givenId);
                 var new_div = $('<div></div>');
                 new_div.data("idx",currPage-1);
                 new_div.attr("class","class","col-lg-3 col-md-4 col-xs-6 thumb");

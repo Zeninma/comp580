@@ -11,3 +11,9 @@ var Book = function(book_json){
         this.pages.push(tmp);
     }
 }
+
+Book.prototype.add=function(pagePost){
+    for(var i = 0; i<pagePost.annotations.length; i++){
+        this.pages.push(pagePost.annotations[i]);
+    }
+}
