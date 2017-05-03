@@ -120,7 +120,7 @@ function start(){
                 new_div.data("idx",currPage-1);
                 new_div.attr("class","class","col-lg-3 col-md-4 col-xs-6 thumb");
                 var new_a = $('<a class="thumbnail"></a>');
-                var new_img = $('<img class="img-responsive" src="'+imgUrl+'">');
+                var new_img = $('<img class="img-responsive" src="'+url+'">');
                 var new_button = $('<button type= "button">delete</button>');
                 new_button.on('click',function(){
                     addedImg.splice(new_div.data("idx"),1);
