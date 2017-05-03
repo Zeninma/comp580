@@ -19,13 +19,13 @@ class Book{
        $mysqli = Book::connect();
        echo var_dump($bookName).",".var_dump($annoName)."<br>";
        $result = $mysqli -> query(
-            'insert into Book (bookName, annoName) values ("'.$bookName.'","'.'"'.$annoName.'")'
+            'insert into Book (bookName, annoName) values ("'.$bookName.'","'.$annoName.'")'
         );
-        echo 'insert into Book (bookName, annoName) values ("'.$bookName.'","'.'"'.$annoName.'")'.'<br>';
         // NOTE that, $resut also contain id for the new book object
         if($result){
             $bookId = $result->insert_id;
             foreach($annotations as $annotation){
+                $annotation = json_decode(json_encode($annotation));
                 $pageNum = intval($annotation["pagenum"]);
                 $symbolId = intval($annotation["symbolID"]);
                 $mysqli->query(
