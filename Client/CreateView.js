@@ -55,6 +55,7 @@ function start(){
             $("#addedImg row").append(new_div);
         }
         else{
+             $("#alertDiv").attr("class","alert alert-warning alert-dismissable")
             $(".alert-warning").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
             ' <strong>Warning</strong> You need to add 8 images per page');
         }
@@ -64,7 +65,7 @@ function start(){
         //construct a pagePost object
         var tmp_page = new PagePost(addedImg);
         book.push(tmp_page);
-        $("alertDiv").attr("class","alert alert-success alert-dismissable");
+        $("#alertDiv").attr("class","alert alert-success alert-dismissable");
         $(".alert-warning").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
             ' <strong>Success!</strong> Added new set of annotations for page '+currPage);
         if(currPage == pageNum){
