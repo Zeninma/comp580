@@ -46,6 +46,13 @@ ini_set('display_errors', 1);
                 exit();
             }
         }
+        else if((count($path_components)==2)&&($path_components[1] == "standardSymbol")){
+            $symbol_set = Symbol::getStandardSet();
+            $symbol_setJson = json_encode($symbol_set);
+            header("Content-type: application/json");
+            print($bookListJson);
+            exit();
+        }
         // The following may need to be deleted
         else{
             exit();

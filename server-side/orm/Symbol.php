@@ -29,6 +29,31 @@ class Symbol{
         }
     }
 
+    public function getStandardSet(){
+        $mysqli = Symbol::connect();
+        $result = $mysqli->query(
+            "select * from Symbol where Symbol.id <=".intval(36)
+        );
+        $standardSet = array();
+        if($result){
+            while($next_row = $result->fetch_array()){
+                $tmp_id = intval($next_row['id']);
+                $tmp_word = $next_row['wordstosay'];
+                $tmp_url = $next_row['url'];
+                $tmp_symbol = array(
+                    'id'=>$tmp_id,
+                    'text'=>$tmp_word,
+                    'url'=>$tmp_url
+                );
+                $standardSet[] = $tmp_symbol;
+            }
+            return $standardSet;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function get_array(){
         $result_array = array(
             'url' => $this->url,

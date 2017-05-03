@@ -13,9 +13,8 @@ function start(){
     // set the name of the book title
     book_title = window.location.href.split('#')[1];
     // find the number of page of the book
-    $.ajax('',
+    $.ajax('http://test.tarheelreader.org/book-as-json/',
     {type:"GET",
-    async: false,
     dataType:"json",
     data:{"slug": book_title},
     success: function(book_json, status, jqXHR){
@@ -26,7 +25,6 @@ function start(){
     // where each symbol contains symbolId, url, text
     $.ajax(url_base + 'hub.php/standardSymbol',
     {type: "GET",
-    async:false,
     success: function(symbol_set_json, status, jqXHR){
         loadStandardSymbols(symbol_set_json);
     }});
