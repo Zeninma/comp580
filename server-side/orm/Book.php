@@ -16,7 +16,8 @@ class Book{
 
     public static function addNewBook($bookName, $annoName, $annotations){
         // To add new book
-        echo "in the book";
+        echo "in the book <br>";
+        echo var_dump($bookName)+', '+var_dump($annoName)+', '+var_dump($annotations)+'<br>';
        $mysqli = Book::connect();
        $result = $mysqli -> query(
             'insert into Book values (0,"'+$mysqli->real_escape_string($bookName)+'","'+'"'+$mysqli->real_escape_string($annoName)+'")'
