@@ -32,6 +32,11 @@ function start(){
     currPage = 1;
     addedImg = new Array();
 
+/*************** Debug purpose, need to delete *****************************************/
+    pageNum = 1;
+/*************** *****************************************/
+/*************** *****************************************/
+/*************** *****************************************/
 
     $(document).on('click', '#standardSymbols div img',function(e){
         if(addedImg.length<4){
@@ -88,7 +93,12 @@ function start(){
         $("#alertDiv").attr("class","alert alert-success alert-dismissable");
         $(".alert-success").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
             ' <strong>Success!</strong> Added new set of annotations for page '+currPage);
-        if(currPage == pageNum){
+        if(addedImg.length <8){
+              $("#alertDiv").attr("class","alert alert-warning alert-dismissable")
+            $(".alert-warning").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
+            ' <strong>Warning</strong> You need to add 8 images per page');
+        }
+        else if(currPage == pageNum){
             uploadBook();
         }
         else{
