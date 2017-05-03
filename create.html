@@ -27,7 +27,7 @@
         <div class = "btn-group btn-group-justified">
             <a type="button" class="btn btn-info btn-primary" data-toggle="collapse" data-target="#demo">Added</a>
             <a type="button" class="btn btn-info btn-primary" data-toggle="collapse" data-target="#customize">Customize</a>
-            <a class="btn btn-primary">c</a>
+            <a class="btn btn-primary">Complete</a>
         </div>
 
         <!--Added Images-->
@@ -69,31 +69,17 @@
         
         <div id="customize" class="collapse">
         <div class="container">
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h1 class="page-header">Thumbnail Gallery</h1>
+            <form class="form-inline">
+            <div class="form-group">
+            <label for="email">url</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
             </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" >
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                    <button type= "button">delete</button>
-                </a>
+            <div class="form-group">
+            <label for="pwd">words to say</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                    <button type= "button">delete</button>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                    <button type= "button">delete</button>
-                </a>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-default">Add</button>
+            </form>
         </div>
         </div>
         </div>
