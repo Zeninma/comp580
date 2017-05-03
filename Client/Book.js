@@ -11,4 +11,3 @@ var Book = function(book_json){
         this.pages.push(tmp);
     }
 }
-
