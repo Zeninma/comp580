@@ -14,14 +14,22 @@ class Book{
         );
     }
 
-    public static function addNewBook($bookName){
+    public static function addNewBook($bookName, $annoName, $annotations){
         // To add new book
        $mysqli = Book::connect();
        $result = $mysqli -> query(
-            "insert into Book (bookName) values('".$mysqli->real_escape_string($bookName)."')"
+            'insert into Book values (0,"'+$mysqli->escape_real_string($bookName)+'","'+'"'+$mysqli->escape_real_string($annoName)+'")'
         );
         // NOTE that, $resut also contain id for the new book object
         if($result){
+            $bookId = $result->insert_id;
+            foreach($annotation as $annotation){
+                $pageNum = intval($annotation["pagenum"]);
+                $symbolId = intval($annotation["symbolID"]);
+                $mysqli->query(
+                    'insert into Annotation values (0,'+$bookId+','+$pageNum+','+$symbolId +')'
+                );
+            }
             return true;
         }
         else{

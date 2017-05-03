@@ -171,7 +171,7 @@ function uploadBook(){
     {type: "GET",
     contentType: 'application/json',
     dataType: "json",
-    data: {"annotations":JSON.stringify(book)},
+    data: {"annotations":JSON.stringify(book), "name":book_title, "annoName":annoName},
     success: function(json, status, jqXHR){
         alert("new set of annotations have been created!");
         window.close();

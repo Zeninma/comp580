@@ -54,9 +54,10 @@ ini_set('display_errors', 1);
             exit();
         }
         else if((count($path_components)==2)&&($path_components[1] == "newBook")){
-                print_r($_GET);
-                $decodeString = json_decode($_GET['annotations']);
-                echo var_dump($decodeString)+'<br>';
+                $annotations = json_decode($_GET['annotations']);
+                $book_name = $_GET['name'];
+                $anno_name = $_GET['annoName'];
+                Book::addNewBook($book_name, $anno_name,$annotations["annotations"]);
             }
             else{
                 header("HTTP/1.0 404 NOT FOUND");
