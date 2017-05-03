@@ -50,7 +50,7 @@ ini_set('display_errors', 1);
             $symbol_set = Symbol::getStandardSet();
             $symbol_setJson = json_encode($symbol_set);
             header("Content-type: application/json");
-            print($bookListJson);
+            print($symbol_setJson);
             exit();
         }
         // The following may need to be deleted
