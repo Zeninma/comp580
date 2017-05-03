@@ -1,4 +1,3 @@
 a .thumbnail img{
-    height: 250px;
-    width: 260px;
+    max-height: 250px;
 }
