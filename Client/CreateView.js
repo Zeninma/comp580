@@ -94,8 +94,7 @@ function start(){
             $(".alert-warning").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
             ' <strong>Warning</strong> You need to add 8 images per page');
         }
-        // for debug purpose needs to be deleted
-        else if(currPage == 1){
+        else if(currPage == pageNum){
             uploadBook();
         }
         else{
