@@ -57,7 +57,7 @@ ini_set('display_errors', 1);
                 $annotations = json_decode($_GET['annotations']);
                 $book_name = $_GET['name'];
                 $anno_name = $_GET['annoName'];
-                Book::addNewBook($book_name, $anno_name,$annotations["annotations"]);
+                Book::addNewBook($book_name, $anno_name,$annotations);
             }
             else{
                 header("HTTP/1.0 404 NOT FOUND");

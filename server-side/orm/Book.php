@@ -18,7 +18,7 @@ class Book{
         // To add new book
        $mysqli = Book::connect();
        $result = $mysqli -> query(
-            'insert into Book values (0,"'+$mysqli->escape_real_string($bookName)+'","'+'"'+$mysqli->escape_real_string($annoName)+'")'
+            'insert into Book values (0,"'+$mysqli->real_escape_string($bookName)+'","'+'"'+$mysqli->real_escape_string($annoName)+'")'
         );
         // NOTE that, $resut also contain id for the new book object
         if($result){
