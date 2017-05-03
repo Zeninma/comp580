@@ -37,6 +37,7 @@ function start(){
         if(addedImg.length<4){
             var clicked = $(e.target);
             var symbolId= clicked.data("id");
+            var imgUrl = clicked.data("url");
             addedImg.push(symbolId);
             var new_div = $('<div></div>');
             new_div.data("idx",curr_page-1);
@@ -56,6 +57,7 @@ function start(){
         else if(4<=addedImg.length&&addedImg.length <8){
             var clicked = $(e.target);
             var symbolId= clicked.data("id");
+            var imgUrl = clicked.data("url");
             addedImg.push(symbolId);
             var new_div = $('<div></div>');
             new_div.data("idx",curr_page-1);
