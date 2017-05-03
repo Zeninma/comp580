@@ -36,8 +36,8 @@ function start(){
     $(document).on('click', '#standardSymbols div img',function(e){
         if(addedImg.length<4){
             var clicked = $(e.target);
-            var imgUrl = clicked.data("url");
-            addedImg.push(imgUrl);
+            var symbolId= clicked.data("id");
+            addedImg.push(symbolId);
             var new_div = $('<div></div>');
             new_div.data("idx",curr_page-1);
             new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
@@ -53,10 +53,10 @@ function start(){
             new_div.append(new_a);
             $("#addedImgRow1").append(new_div);
         }
-        else if(4<=addedImg.length<8){
+        else if(4<=addedImg.length&&addedImg.length <8){
             var clicked = $(e.target);
-            var imgUrl = clicked.data("url");
-            addedImg.push(imgUrl);
+            var symbolId= clicked.data("id");
+            addedImg.push(symbolId);
             var new_div = $('<div></div>');
             new_div.data("idx",curr_page-1);
             new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
@@ -84,7 +84,7 @@ function start(){
         var tmp_page = new PagePost(addedImg);
         book.push(tmp_page);
         $("#alertDiv").attr("class","alert alert-success alert-dismissable");
-        $(".alert-warning").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
+        $(".alert-success").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
             ' <strong>Success!</strong> Added new set of annotations for page '+currPage);
         if(currPage == pageNum){
             uploadBook();
