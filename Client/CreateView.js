@@ -51,7 +51,7 @@ function start(){
             new_a.append(new_img);
             new_a.append(new_button);
             new_div.append(new_a);
-            $("#addedImg .row1").append(new_div);
+            $("#addedImgRow1").append(new_div);
         }
         else if(4<=addedImg.length<8){
             var clicked = $(e.target);
@@ -70,7 +70,7 @@ function start(){
             new_a.append(new_img);
             new_a.append(new_button);
             new_div.append(new_a);
-            $("#addedImg .row2").append(new_div);
+            $("#addedImgRow2").append(new_div);
         }
         else{
              $("#alertDiv").attr("class","alert alert-warning alert-dismissable")
