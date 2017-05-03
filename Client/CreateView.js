@@ -83,7 +83,9 @@ function start(){
     $(document).on('click',"#complete",function(){
         //construct a pagePost object
         var tmp_page = new PagePost(addedImg, currPage);
-        book.add(tmp_page);
+        for(var i=0; i<addedImg.length; i++){
+            book.push(tmp_page.annotations[i]);
+        }
         $("#alertDiv").attr("class","alert alert-success alert-dismissable");
         $(".alert-success").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
             ' <strong>Success!</strong> Added new set of annotations for page '+currPage);
