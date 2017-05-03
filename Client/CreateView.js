@@ -120,7 +120,7 @@ function start(){
                 addedImg.push(givenId);
                 var new_div = $('<div></div>');
                 new_div.data("idx",currPage-1);
-                new_div.attr("class","class","col-lg-3 col-md-4 col-xs-6 thumb");
+                new_div.attr("class","col-lg-3 col-md-4 col-xs-6 thumb");
                 var new_a = $('<a class="thumbnail"></a>');
                 var new_img = $('<img class="img-responsive" src="'+url+'">');
                 new_img.attr({'width':252,'height':214});
@@ -130,6 +130,7 @@ function start(){
                     new_div.remove();
                 })
                 new_a.append(new_img);
+                new_a.append(new_button);
                 new_div.append(new_a);
                 var row1Num = $('#addedImgRow1').length;
                 var row2Num = $('#addedImgRow1').length;
