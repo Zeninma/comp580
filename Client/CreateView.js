@@ -53,7 +53,7 @@ function start(){
             new_div.append(new_a);
             $("#addedImg .row1").append(new_div);
         }
-        else if(addedImg.length<8){
+        else if(4<=addedImg.length<8){
             var clicked = $(e.target);
             var imgUrl = clicked.data("url");
             addedImg.push(imgUrl);
