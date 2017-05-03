@@ -59,6 +59,12 @@ ini_set('display_errors', 1);
                 $book_name = $_GET['name'];
                 $anno_name = $_GET['annoName'];
                 Book::addNewBook($book_name, $anno_name,$annotations);
+                exit();
+        }
+        else if ((count($path_components)==2)&&($path_components[1] == "symbol")){
+            echo var_dump($_REQUEST["url"]);
+            echo var_dump($_GET);
+            exit();
         }
         else{
             header("HTTP/1.0 404 NOT FOUND");
