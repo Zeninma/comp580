@@ -20,6 +20,7 @@ class Book{
        $result = $mysqli -> query(
             'insert into Book values (0,"'+$mysqli->real_escape_string($bookName)+'","'+'"'+$mysqli->real_escape_string($annoName)+'")'
         );
+        echo  'insert into Book values (0,"'+$mysqli->real_escape_string($bookName)+'","'+'"'+$mysqli->real_escape_string($annoName)+'")';
         // NOTE that, $resut also contain id for the new book object
         if($result){
             $bookId = $result->insert_id;
