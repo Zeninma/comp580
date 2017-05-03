@@ -25,7 +25,7 @@ class Book{
         if($result){
             $bookId = $mysqli->insert_id;
             foreach($annotations as $annotation){
-                $annotation = json_encode(json_decode($annotation));
+                $annotation = json_decode(json_encode($annotation));
                 echo var_dump($annotation)."<br>";
                 $pageNum = intval($annotation["pagenum"]);
                 $symbolId = intval($annotation["symbolID"]);
