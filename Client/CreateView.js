@@ -33,7 +33,7 @@ function start(){
     addedImg = new Array();
 
 
-    $(document).on('click', '#standardSymbols div',function(e){
+    $(document).on('click', '#standardSymbols div img',function(e){
         if(addedImg.length<4){
             var clicked = $(e.target);
             var imgUrl = clicked.data("url");
