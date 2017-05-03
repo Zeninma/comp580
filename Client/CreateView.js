@@ -112,7 +112,7 @@ function start(){
             dataType: "json",
             data: $("#cusForm").serialize(),
             success: function(idJson, status, jqXHR){
-                var givenId = parseInt(idJson.id);
+                var givenId = parseInt(idJson);
                 var url = $('input[name="url"]').val();
                 var text = $('input[name="text"]').val();
                 addedImg.push(givenId);
