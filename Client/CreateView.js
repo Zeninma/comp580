@@ -149,10 +149,6 @@ function start(){
             ' <strong>Warning</strong> You need to add 8 images per page');
        }
     })
-
-    $('#modalbtn').on('click',function(e){
-        annoName = $('#name').value();
-    })
 }
 
 function loadStandardSymbols(symbol_set_json){
@@ -198,5 +194,12 @@ function uploadBook(){
     })
 }
 
+function popmodal(){
+    $('#modalbtn').on('click',function(e){
+    annoName = $('#name').value();
+    })
+    $("#myModal").modal('show');
+}
+
 $(document).ready(start());
-$(".modal-content").modal('show');
+$(window).load(popmodal());
