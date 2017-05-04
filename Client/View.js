@@ -27,6 +27,7 @@ var current_page_num;
 var layout_mode = 0;
 var maxPage;
 var book_title;
+var hasNotation = false;
 
 function start(){
     // start the whole process
@@ -165,7 +166,7 @@ function isBook(current){
     }
     else if(m&&!m[2]){
         bookLayout();
-        if (current_name == m[1]){
+        if (current_name == m[1]&&hasNotation){
             current_page_num = 1;
             loadNotation(current_page_num);
         }
@@ -193,7 +194,7 @@ function isBook(current){
             loadNotation(current_page_num);
         }
     }
-    else if(m[2]){
+    else if(m[2]&&hasNotation){
         if(parseInt(m[2])>maxPage){
              $('.picGrid td').html('');
         }else{
@@ -257,6 +258,11 @@ function get_Notation_list(book_name){
             // Should reconstruct the option list
             // for versions of books.
             current_bookList = new BookList(book_list_json);
+            if(current_bookList.id_array.length == 0){
+                hasNotation = false;
+                return;
+            }
+            hasNotation = true;
             // call the BookList.fll_notation
             current_bookList.fill_notation();
         },
