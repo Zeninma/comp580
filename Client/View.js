@@ -143,7 +143,7 @@ function bookLayout(){
             $(".vertical img").css({"width": pic_size-2, "height":pic_size-2});
             $(".vertical_grid").css("margin-left",vertical_margin);
         }
-                $("text_div").css({"width":pic_size-1,"text-align":"center", "height":20});
+                $(".textDiv").css({"width":pic_size-1,"text-align":"center"});
 }
 
 function isBook(current){
