@@ -195,6 +195,3 @@ function uploadBook(){
 }
 
 $(document).ready(start());
-$(window).load(function(){
-      alert('yeas');
-});
