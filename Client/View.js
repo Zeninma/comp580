@@ -170,13 +170,12 @@ function isBook(current){
             loadNotation(current_page_num);
         }
         else{
-            book_title = window.location.href.split('#')[1];
             // find the number of page of the book
             $.ajax('http://test.tarheelreader.org/book-as-json/',
             {type:"GET",
             dataType:"json",
             async: false,
-            data:{"slug": book_title},
+            data:{"slug": m[1]},
             success: function(book_json, status, jqXHR){
                 maxPage = book_json.pages.length;
             }});
