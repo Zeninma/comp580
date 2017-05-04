@@ -34,7 +34,7 @@ function start(){
     addedImg = new Array();
 
     $(document).on('click', '#standardSymbols div img',function(e){
-        if(addedImg.length<4){
+        if($("#addedImgRow1 .thumb").length<4){
             var clicked = $(e.target);
             var symbolId= clicked.data("id");
             var imgUrl = clicked.data("url");
@@ -55,7 +55,7 @@ function start(){
             new_div.append(new_a);
             $("#addedImgRow1").append(new_div);
         }
-        else if(4<=addedImg.length&&addedImg.length <8){
+        else if($("#addedImgRow1 .thumb").length<4){
             var clicked = $(e.target);
             var symbolId= clicked.data("id");
             var imgUrl = clicked.data("url");
