@@ -1,10 +1,11 @@
 var book_title;
 var pageNum;
-var url_base = "/CHAIR/server-side";
+var d = new Date();
+var url_base;
 var currPage;
 // array holds all 8 ids of the symbols added to the current page
 var addedImg;
-var annoName = "test";
+var annoName = d.getTime();
 // the book is a BookPost object that is going to be sent to the server
 // book.pages is a pagePost object here
 var book = new Array();
@@ -148,6 +149,11 @@ function start(){
             ' <strong>Warning</strong> You need to add 8 images per page');
        }
     })
+
+    $('#modalbtn').on('click',function(e){
+        annoName = $('#name').value();
+    })
+    $(".modal-content").modal('show');
 }
 
 function loadStandardSymbols(symbol_set_json){
@@ -194,4 +200,3 @@ function uploadBook(){
 }
 
 $(document).ready(start());
-$("#standardSymbols .page-header").html(book_title+' Page' + currPage);
