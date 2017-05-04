@@ -225,6 +225,8 @@ function loadNotation(page_num){
         curr_img.attr({"src":pic,"alt":text});
         curr_img.data("text",text);
         curr_img.css({"width":pic_size-2, "height":pic_size-2});
+        var textSpan = $('<span></span>');
+        textSpan.html(text);
         if (layout_mode == 0){
             curr_td = $('.horizontal_grid #grid'+i);
             
@@ -233,6 +235,7 @@ function loadNotation(page_num){
             curr_td = $('.vertical_grid #grid'+i);
         }
         curr_td.append(curr_img);
+        curr_td.append(textSpan);
     }
 }
 
