@@ -143,6 +143,7 @@ function bookLayout(){
             $(".vertical img").css({"width": pic_size-2, "height":pic_size-2});
             $(".vertical_grid").css("margin-left",vertical_margin);
         }
+                textSpan.css({"width":pic_size-1,"text-align":"center"});
 }
 
 function isBook(current){
@@ -225,9 +226,8 @@ function loadNotation(page_num){
         curr_img.attr({"src":pic,"alt":text});
         curr_img.data("text",text);
         curr_img.css({"width":pic_size-2, "height":pic_size-2});
-        var textSpan = $('<span></span>');
+        var textSpan = $('<div></div>');
         textSpan.html(text);
-        textSpan.css("text-align","center");
         if (layout_mode == 0){
             curr_td = $('.horizontal_grid #grid'+i);
             
