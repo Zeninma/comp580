@@ -31,7 +31,6 @@ function start(){
 
     currPage = 1;
     addedImg = new Array();
-    $("#standardSymbols .page-header").html(book_title+' Page' + currPage);
 
     $(document).on('click', '#standardSymbols div img',function(e){
         if(addedImg.length<4){
@@ -195,3 +194,4 @@ function uploadBook(){
 }
 
 $(document).ready(start());
+$("#standardSymbols .page-header").html(book_title+' Page' + currPage);
