@@ -29,17 +29,6 @@ var maxPage;
 var book_title;
 
 function start(){
-
-    book_title = window.location.href.split('#')[1];
-    // find the number of page of the book
-    $.ajax('http://test.tarheelreader.org/book-as-json/',
-    {type:"GET",
-    dataType:"json",
-    data:{"slug": book_title},
-    success: function(book_json, status, jqXHR){
-        maxPage = book_json.pages.length;
-    }});
-
     // start the whole process
     setInterval(function(){
         // set the interval to check the current path
@@ -181,7 +170,16 @@ function isBook(current){
             loadNotation(current_page_num);
         }
         else{
-            // at the first page
+            book_title = window.location.href.split('#')[1];
+            // find the number of page of the book
+            $.ajax('http://test.tarheelreader.org/book-as-json/',
+            {type:"GET",
+            dataType:"json",
+            data:{"slug": book_title},
+            success: function(book_json, status, jqXHR){
+                maxPage = book_json.pages.length;
+            }});
+                    // at the first page
             // add create button on the nav bar
             var li = $('<li id="create"> </li>');
             li.html('<a href="http://test.tarheelreader.org/CHAIR/create.html#'+m[1]+'" target = "_blank">Create</a>');
