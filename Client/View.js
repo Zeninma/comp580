@@ -25,8 +25,21 @@ var current_page_num;
 // 1: the annotations are all placed on the bottom;
 // default to be 0
 var layout_mode = 0;
+var maxPage;
+var book_title;
 
 function start(){
+
+    book_title = window.location.href.split('#')[1];
+    // find the number of page of the book
+    $.ajax('http://test.tarheelreader.org/book-as-json/',
+    {type:"GET",
+    dataType:"json",
+    data:{"slug": book_title},
+    success: function(book_json, status, jqXHR){
+        maxPage = book_json.pages.length;
+    }});
+
     // start the whole process
     setInterval(function(){
         // set the interval to check the current path
@@ -183,9 +196,14 @@ function isBook(current){
         }
     }
     else if(m[2]){
-        bookLayout();
+        if(parseInt(m[2])>maxPage){
+             $('.picGrid td').html('');
+        }else{
+             bookLayout();
         current_page_num = m[2];
         loadNotation(current_page_num);
+        }
+       
     }
     else{
         return;
