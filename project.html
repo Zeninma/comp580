@@ -4,11 +4,6 @@
 	<title>Ao Project</title>
 	<script src="http://www.cs.unc.edu/Courses/comp426-f16/jquery-3.1.0.js" ></script>
 	<link rel = "stylesheet" type = "text/css" href = "grid.css">
-	<script src="Client/View.js"></script>
-	<script src="Client/Book.js"></script>
-	<script src="Client/Symbol.js"></script>
-	<script src="Client/Page.js"></script>
-	<script src="Client/BookList.js"></script>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -21,6 +16,12 @@
 
 	<!--Add the ReponsiveVoice.js-->
 	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+
+	<script src="Client/Book.js"></script>
+	<script src="Client/Symbol.js"></script>
+	<script src="Client/Page.js"></script>
+	<script src="Client/BookList.js"></script>
+	<script src="Client/View.js"></script>
 	</head>
 	
 	<body>
@@ -60,6 +61,34 @@
 							<li>Version3</li>
 							</ul>
 						</li>
+
+						<!--voice rate control-->
+						<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Voice Control <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							<li id = "faster">Faster</li>
+							<li id = "slower">Slower</li>
+							<li id = "man">Man</li>
+							<li id = "woman">Woman</li>
+							</ul>
+						</li>
+						<script>
+							$("#faster").on('click',function(e){
+								speechRate += 0.1;
+							});
+							$("#slower").on('click',function(e){
+								if(speechRate>0.1){
+									speechRate -= 0.1;
+								}
+							});
+							$("#man").on('click',function(e){
+								speechGender = "US English Male";
+							});
+							$("#woman").on('click',function(e){
+								speechGender = "US English Female";
+							});
+						</script>
+
 					</ul>
 					</div><!--/.nav-collapse -->
 				</div>

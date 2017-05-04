@@ -27,6 +27,8 @@ var current_page_num;
 var layout_mode = 0;
 var maxPage;
 var book_title;
+var speechRate = 1;
+var speechGender = "US English Female";
 
 function start(){
     // start the whole process
@@ -54,7 +56,7 @@ function start(){
     function(e){
         var clicked = $(e.target);
         var text = clicked.data("text");
-        responsiveVoice.speak(text);
+        responsiveVoice.speak(text, speechGender,{rate : speechRate});
     });
 
     // bound the View click event with layout change
