@@ -18,7 +18,7 @@ BookList.prototype.fill_notation = function(){
         var tmp_li = $('<li></li>');
         // bind the book id with the li
         tmp_li.data("id",id_array[i]);
-        tmp_li.html(name_array[i]);
+        tmp_li.html('<a>'+name_array[i]+'</a>');
         dropDown.append(tmp_li);
     }
 }
