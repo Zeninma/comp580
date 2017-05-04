@@ -121,7 +121,7 @@ function bookLayout(){
         var iframeHeight = 0;
         if(layout_mode == 0){
             // layout_mode == 0 indicates the horizontal layout
-            pic_size = Math.min(Math.floor(winWidth * 0.15)-1, Math.floor(winHeight/4));
+            pic_size = Math.min(Math.floor(winWidth * 0.15)-1, Math.floor(winHeight-navBarHeight/4));
             iframeWidth = Math.floor(winWidth * 0.69);
             iframeHeight = winHeight - navBarHeight - 1;
             $(".bodyPart").css({"margin-top":navBarHeight+1});
