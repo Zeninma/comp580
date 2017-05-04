@@ -163,6 +163,7 @@ function isBook(current){
         current_bookList = null;
         current_page_num = null;
         noBookLayout();
+        hasNotation = false;
     }
     else if(m&&!m[2]){
         bookLayout();
