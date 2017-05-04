@@ -55,7 +55,7 @@ function start(){
             new_div.append(new_a);
             $("#addedImgRow1").append(new_div);
         }
-        else if($("#addedImgRow1 .thumb").length<4){
+        else if($("#addedImgRow2 .thumb").length<4){
             var clicked = $(e.target);
             var symbolId= clicked.data("id");
             var imgUrl = clicked.data("url");
