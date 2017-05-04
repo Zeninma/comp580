@@ -188,8 +188,10 @@ function uploadBook(){
     dataType: "json",
     data: {"annotations":JSON.stringify(book), "name":book_title, "annoName":annoName},
     success: function(json, status, jqXHR){
-        alert("new set of annotations have been created!");
-        window.close();
+        alert("new set of annotations have been created! You can close the window now");
+        var overlay = $('<div></div>');
+        overlay.attr('class','overlay');
+        $('body').append(overlay);
     }
     })
 }
