@@ -153,7 +153,6 @@ function start(){
     $('#modalbtn').on('click',function(e){
         annoName = $('#name').value();
     })
-    $(".modal-content").modal('show');
 }
 
 function loadStandardSymbols(symbol_set_json){
@@ -200,3 +199,4 @@ function uploadBook(){
 }
 
 $(document).ready(start());
+$(".modal-content").modal('show');
