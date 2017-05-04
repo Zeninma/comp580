@@ -17,7 +17,6 @@ class Book{
     public static function addNewBook($bookName, $annoName, $annotations){
         // To add new book
        $mysqli = Book::connect();
-       echo var_dump($bookName).",".var_dump($annoName)."<br>";
        $result = $mysqli -> query(
             'insert into Book (bookName, annoName) values ("'.$bookName.'","'.$annoName.'")'
         );
@@ -25,7 +24,6 @@ class Book{
         if($result){
             $bookId = $mysqli->insert_id;
             foreach($annotations as $annotation){
-                echo var_dump($annotation)."<br>";
                 $pageNum = intval($annotation->pagenum);
                 $symbolId = intval($annotation->symbolID);
                 $mysqli->query(

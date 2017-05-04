@@ -182,7 +182,6 @@ function loadStandardSymbols(symbol_set_json){
 function uploadBook(){
     $.ajax(url_base + "/hub.php/newBook",
     {type: "GET",
-    async: false,
     contentType: 'application/json',
     dataType: "json",
     data: {"annotations":JSON.stringify(book), "name":book_title, "annoName":annoName},
