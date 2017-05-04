@@ -31,6 +31,7 @@ function start(){
 
     currPage = 1;
     addedImg = new Array();
+    $("#standardSymbols .page-header").html(book_title+' Page' + currPage);
 
     $(document).on('click', '#standardSymbols div img',function(e){
         if(addedImg.length<4){
@@ -88,9 +89,6 @@ function start(){
         for(var i=0; i<addedImg.length; i++){
             book.push(tmp_page.annotations[i]);
         }
-        $("#alertDiv").attr("class","alert alert-success alert-dismissable");
-        $(".alert-success").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
-            ' <strong>Success!</strong> Added new set of annotations for page '+currPage);
         if(addedImg.length <8){
               $("#alertDiv").attr("class","alert alert-warning alert-dismissable")
             $(".alert-warning").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
@@ -100,7 +98,11 @@ function start(){
             uploadBook();
         }
         else{
+            $("#alertDiv").attr("class","alert alert-success alert-dismissable");
+            $(".alert-success").html(' <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'+
+            ' <strong>Success!</strong> Added new set of annotations for page '+currPage);
             currPage ++;
+            $("#standardSymbols .page-header").html(book_title+' Page' + currPage)
             addedImg = new Array();
             $("#addedImg .row").html('');
         }
