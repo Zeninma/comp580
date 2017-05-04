@@ -194,12 +194,10 @@ function uploadBook(){
     })
 }
 
-function popmodal(){
-    $('#modalbtn').on('click',function(e){
+$(document).ready(start());
+$(window).load(function(){
+      $('#modalbtn').on('click',function(e){
     annoName = $('#name').value();
     })
     $("#myModal").modal('show');
-}
-
-$(document).ready(start());
-$(window).onload(popmodal());
+});
