@@ -1,7 +1,7 @@
 var book_title;
 var pageNum;
 var d = new Date();
-var url_base;
+var url_base = "/CHAIR/server-side";
 var currPage;
 // array holds all 8 ids of the symbols added to the current page
 var addedImg;
