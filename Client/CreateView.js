@@ -202,4 +202,4 @@ function popmodal(){
 }
 
 $(document).ready(start());
-$(window).load(popmodal());
+$(window).onload(popmodal());
