@@ -175,6 +175,7 @@ function isBook(current){
             $.ajax('http://test.tarheelreader.org/book-as-json/',
             {type:"GET",
             dataType:"json",
+            async: false,
             data:{"slug": book_title},
             success: function(book_json, status, jqXHR){
                 maxPage = book_json.pages.length;
