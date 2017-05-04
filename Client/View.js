@@ -227,6 +227,7 @@ function loadNotation(page_num){
         curr_img.css({"width":pic_size-2, "height":pic_size-2});
         var textSpan = $('<span></span>');
         textSpan.html(text);
+        textSpan.css("text-align","center");
         if (layout_mode == 0){
             curr_td = $('.horizontal_grid #grid'+i);
             
