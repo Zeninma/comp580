@@ -196,8 +196,5 @@ function uploadBook(){
 
 $(document).ready(start());
 $(window).load(function(){
-      $('#modalbtn').on('click',function(e){
-    annoName = $('#name').value();
-    })
-    $("#myModal").modal('show');
+      alert('yeas');
 });
