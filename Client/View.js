@@ -67,7 +67,7 @@ function start(){
             $(".vertical_grid td").html('');
             $(".vertical_grid").css({"width":0,"height":0});
             $(".vertical_grid td").css({"width":0,"height":0});
-            bookLayout()
+            bookLayout();
             $(".bottom_grid td").html('');
             loadNotation(current_page_num);
         }
